@@ -148,24 +148,24 @@ Item
   noteFromTheOwner: 'Enjoy a great raclette party with your friends. Have 6 little pans.'
 }, {
   title: 'Jaws',
-  category: 'cinema',
+  category: 'entertainment',
   type: 'dvd',
   photo: ['src/images/jawsdvd.png']
 }, {
   title: 'Pulp Fiction - To watch!',
-  category: 'cinema',
+  category: 'entertainment',
   type: 'dvd',
   photo: ['src/images/pulpfictiondvd.png'],
   noteFromTheOwner: 'The greatest movie I have ever seen! '
 }, {
   title: 'Baby Boss',
-  category: 'cinema',
+  category: 'entertainment',
   type: 'dvd',
   photo: ['src/images/babybossdvd.png'],
   noteFromTheOwner: 'I really enjoyed that movie and I really want to share the joy.'
 }, {
   title: 'Hackers',
-  category: 'cinema',
+  category: 'entertainment',
   type: 'dvd',
   photo: ['src/images/Hackersdvd.png'],
   noteFromTheOwner: 'This is the reason I became a coder. Must watch!'

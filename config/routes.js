@@ -11,7 +11,12 @@ router.route('/login')
   .post(authentications.login);
 
 router.route('/items')
-  .get(items.index);
+  .get(items.index)
+  .post(items.create);
+router.route('/items/:id')
+  .get(items.show)
+  .put(items.update)
+  .delete(items.delete);
 
 router.route('/users')
   .get(users.index);

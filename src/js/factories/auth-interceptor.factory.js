@@ -1,9 +1,9 @@
 angular
-  .module('toolio')
-  .factory('AuthInterceptor', AuthInterceptor);
+.module('toolio')
+.factory('AuthInterceptor', AuthInterceptor);
 
-  AuthInterceptor.$inject = ['API', 'TokenService'];
-  function AuthInterceptor(API, TokenService) {
+AuthInterceptor.$inject = ['API', 'TokenService'];
+function AuthInterceptor(API, TokenService) {
   return  {
     request(config){
       const token = TokenService.getToken();

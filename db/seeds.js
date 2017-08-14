@@ -1,15 +1,14 @@
 const mongoose   = require('mongoose');
 mongoose.Promise = require('bluebird');
+const Item = require('../models/item');
 
 const env = require('../config/config');
 
 mongoose.connect(env.db);
 
-const Item = require('../models/item');
 Item.collection.drop();
 
-Item
-.create([{
+const itemData = [{
   title: 'Great hair straightener!',
   category: 'electrical beauty',
   type: 'hair straighteners',
@@ -169,4 +168,10 @@ Item
   type: 'dvd',
   photo: ['src/images/Hackersdvd.png'],
   noteFromTheOwner: 'This is the reason I became a coder. Must watch!'
-}]);
+}];
+
+Item
+.create(itemData)
+.then(items => console.log(`${items.length} items created!`))
+.catch(err => console.log(err))
+.finally(() => mongoose.connection.close());

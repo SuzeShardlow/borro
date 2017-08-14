@@ -42,7 +42,7 @@ userSchema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('User, userSchema');
+module.exports = mongoose.model('User', userSchema);
 
 function setPassword(value){
   this._password = value;

@@ -6,7 +6,7 @@ const bluebird   = require('bluebird');
 const morgan     = require('morgan');
 const bodyParser = require('body-parser');
 const cors       = require('cors');
-const expressJWT = require('expressJWT');
+const expressJWT = require('express-jwt');
 const config     = require('./config/config');
 const routes     = require('./config/routes');
 

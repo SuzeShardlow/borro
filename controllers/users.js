@@ -8,6 +8,21 @@ function usersIndex(req, res) {
     });
 }
 
+function usersUpdate(req, res) {
+
+}
+
+function usersDelete(req, res) {
+
+}
+
+function usersShow(req, res) {
+
+}
+
 module.exports = {
-  index: usersIndex
+  index: usersIndex,
+  show: usersShow,
+  delete: usersDelete,
+  update: usersUpdate
 };

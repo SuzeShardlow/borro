@@ -1,0 +1,37 @@
+<h1>Register</h1>
+<form ng-submit="register.register()">
+
+  <div>
+    <input type="text" name="firstName" ng-model="register.user.firstName" placeholder="First Name">
+  </div>
+
+  <div>
+    <input type="text" name="lastName" ng-model="register.user.lastName" placeholder="Last Name">
+  </div>
+
+  <div>
+    <input type="email" name="email" ng-model="register.user.email" placeholder="E-mail Address">
+  </div>
+
+  <div>
+    <input type="text" name="photo" ng-model="register.user.photo" placeholder="Your Photograph">
+  </div>
+
+  <div>
+    <input type="date" name="dob" ng-model="register.user.dob" placeholder="Your Date Of Birth">
+  </div>
+
+  <div>
+    <input type="text" name="description" ng-model="register.user.description" placeholder="A Bit About You!">
+  </div>
+
+  <div>
+    <input type="password" name="password" ng-model="register.user.password" placeholder="Choose A Password (minimum six characters)">
+  </div>
+
+  <div>
+    <input type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Retype Password">
+  </div>
+
+<input type="submit" value="Register" />
+</form>

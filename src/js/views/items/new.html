@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="">
   <h1>Add a new item</h1>
 </div>
@@ -9,14 +10,14 @@
   </div>
 
   <div class="">
-    <select class="" name="category" ng-model="edit.item.category">
-      <option value="{{ edit.item.category }}"></option>
-      <option value="Gardening"></option>
-      <option value="Outdoors"></option>
-      <option value="DIY"></option>
-      <option value="Kitchen"></option>
-      <option value="Electrical Beauty"></option>
-      <option value="Entertainment"></option>
+    <select class="" name="category" ng-model="itemsNew.item.category">
+      <!-- <option value="{{ edit.item.category }}"></option> -->
+      <option ng-model="itemsNew.item.category">Gardening</option>
+      <option ng-model="itemsNew.item.category">Outdoors</option>
+      <option ng-model="itemsNew.item.category">DIY</option>
+      <option ng-model="itemsNew.item.category">Kitchen</option>
+      <option ng-model="itemsNew.item.category">Electrical Beauty</option>
+      <option ng-model="itemsNew.item.category">Entertainment</option>
     </select>
   </div>
 

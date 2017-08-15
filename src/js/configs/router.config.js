@@ -26,25 +26,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: 'js/views/items/edit.html',
     controller: 'EditCtrl as edit'
   })
-<<<<<<< HEAD
   .state('itemsNew', {
     url: '/items/new',
     templateUrl: 'js/views/items/new.html',
     controller: 'ItemsNewCtrl as itemsNew'
-=======
+  })
   .state('userShow', {
     url: '/userShow',
     templateUrl: 'js/views/users/dashboard.html',
     controller: 'userShow as userShow'
-<<<<<<< HEAD
->>>>>>> development
-=======
-  })
-  .state('itemsNew', {
-    url: '/itemsNew',
-    templateUrl: 'js/views/items/new.html',
-    controller: 'ItemsNew as ItemsNew'
->>>>>>> development
   });
   $urlRouterProvider.otherwise('/');
 }

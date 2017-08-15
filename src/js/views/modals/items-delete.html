@@ -1,0 +1,11 @@
+<div>
+  <h3>Warning</h3>
+</div>
+<div>
+  <p>Are you sure you want to delete <strong>{{ vm.item.name }}</strong>?</p>
+  <p>This action cannot be undone.</p>
+</div>
+<div>
+  <button ng-click="vm.closeModal()">Cancel</button>
+  <button ng-click="vm.itemsDelete()">Delete</button>
+</div>

@@ -30,6 +30,11 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/userShow',
     templateUrl: 'js/views/users/dashboard.html',
     controller: 'userShow as userShow'
+  })
+  .state('itemsNew', {
+    url: '/itemsNew',
+    templateUrl: 'js/views/items/new.html',
+    controller: 'ItemsNew as ItemsNew'
   });
   $urlRouterProvider.otherwise('/');
 }

@@ -13,6 +13,6 @@ function ItemsNew(Item, $state){
     .save(vm.item)
     .$promise
     .then(() =>
-      $state.go('itemsIndex'));
-    }
+    $state.go('itemsIndex'));
   }
+}

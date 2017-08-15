@@ -1,9 +1,9 @@
 angular
   .module('toolio')
-  .controller('ItemIndexCtrl', BirdsIndexCtrl);
+  .controller('ItemIndexCtrl', ItemsIndexCtrl);
 
-BirdsIndexCtrl.$inject = ['Item'];
-function BirdsIndexCtrl(Item) {
+ItemsIndexCtrl.$inject = ['Item'];
+function ItemsIndexCtrl(Item) {
   const vm = this;
 
   vm.all           = Item.query();

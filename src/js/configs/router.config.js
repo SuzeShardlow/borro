@@ -20,6 +20,21 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/login',
     templateUrl: 'js/views/users/login.html',
     controller: 'LoginCtrl as login'
-  });
+  })
+  .state('itemsIndex', {
+    url: '/items',
+    templateUrl: 'js/views/items/index.html',
+    controller: 'ItemIndexCtrl as index'
+  })
+  .state('itemsNew', {
+    url: '/items/new',
+    templateUrl: 'js/views/items/new.html',
+    controller: 'ItemsNew as new'
+  })
+
+  .state('itemsEdit', {
+    url: '/items/:id/edit',
+    templateUrl: 'js/views/items/edit.html',
+    controller: 'ItemsEdit as edit'
   $urlRouterProvider.otherwise('/');
 }

@@ -25,4 +25,7 @@ router.route('/users/:id')
   .put(users.update)
   .delete(users.delete);
 
+// router.route('/users/:id/items')
+//   .get(users.show);
+
 module.exports = router;

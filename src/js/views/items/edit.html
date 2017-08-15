@@ -2,13 +2,48 @@
   <h1>Edit your item</h1>
 </div>
 
-<form ng-submit="vm.update()">
+<form ng-submit="edit.update()">
 
   <div class="">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" ng-model="vm.item.title">
+    <label for="title">Title of your listing</label>
+    <input type="text" name="title" id="title" ng-model="edit.item.title">
   </div>
 
-  
+  <div class="">
+    <select class="" name="category" ng-model="edit.item.category">
+      <option value="{{ edit.item.category }}"></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+  </div>
+
+  <div class="">
+    <label for="type">Type of item</label>
+    <input type="text" name="type" id="type" ng-model="edit.item.type">
+  </div>
+
+  <div class="">
+    <label for="make">Make</label>
+    <input type="text" name="make" id="make" ng-model="edit.item.make">
+  </div>
+
+  <div class="">
+    <label for="model">Model</label>
+    <input type="text" name="model" id="model" ng-model="edit.item.model">
+  </div>
+
+  <div class="">
+    <label for="photo">Photo</label>
+    <input type="text" name="photo" id="photo" ng-model="edit.item.photo">
+  </div>
+
+  <div class="">
+    <label for="note">Information for the borrower</label>
+    <input type="text" name="note" id="note" ng-model="edit.item.noteFromTheOwner">
+  </div>
 
 </form>

@@ -1,20 +1,20 @@
 angular
-  .module('toolio')
-  .controller('ItemsEdit',ItemsEdit);
+.module('toolio')
+.controller('EditCtrl',EditCtrl);
 
-  ItemsEdit.$inject = ['Items','$stateParams','$state'];
-  function ItemsEdit(Items,$stateParams,$state) {
-    const vm = this;
+EditCtrl.$inject = ['Item','$stateParams','$state'];
+function EditCtrl(Item,$stateParams,$state) {
+  const vm = this;
 
-    vm.item = Items.get($stateParams);
-    vm.update = itemsUpdate;
+  vm.item = Item.get($stateParams);
+  vm.update = itemsUpdate;
 
   function itemsUpdate() {
     Item
-      .update({id: $stateParams.id}, vm.item)
-      .$promise
-      .then(() => {
-        $state.go('itemsShow');
-  });
-}
+    .update({id: $stateParams.id}, vm.item)
+    .$promise
+    .then(() => {
+      $state.go('itemsShow');
+    });
+  }
 }

@@ -22,9 +22,9 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'LoginCtrl as login'
   })
   .state('edit',{
-    url: '/edit',
+    url: '/items/:id/edit',
     templateUrl: 'js/views/items/edit.html',
-    controller: 'ItemEdit as edit'
-  })
+    controller: 'EditCtrl as edit'
+  });
   $urlRouterProvider.otherwise('/');
 }

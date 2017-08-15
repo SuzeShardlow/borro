@@ -8,6 +8,55 @@ function indexRoute(req, res) {
     .catch(err => res.status(500).json(err));
 }
 
+function createRoute(req, res) {
+  Item
+    .create(req.body)
+    .then(item => res.status(200).json(item))
+    .catch(err => res.status(500).json(err));
+}
+
+function showRoute(req, res) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then(item => {
+      if (!item) res.status(404).json({message: 'no item found!'});
+      return res.status(200).json(item);
+    })
+    .catch(err => res.status(500).json(err));
+}
+
+function updateRoute(req, res) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then(item => {
+      if (!item) res.status(404).json({message: 'no item found!'});
+      for (const field in req.body) {
+        item[field] = req.body[field];
+      }
+      return item.save();
+    })
+    .then(item => res.status(200).json(item))
+    .catch(err => res.status(500).json(err));
+}
+
+function deleteRoute(req, res) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then(item => {
+      if (!item) res.status(404).json({message: 'no item found!'});
+      return item.remove();
+    })
+    .then(() => res.status(204).end())
+    .catch(err => res.status(500).json(err));
+}
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  create: createRoute,
+  show: showRoute,
+  update: updateRoute,
+  delete: deleteRoute
 };

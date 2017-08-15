@@ -21,6 +21,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: 'js/views/users/login.html',
     controller: 'LoginCtrl as login'
   })
+<<<<<<< HEAD
   .state('itemsIndex', {
     url: '/items',
     templateUrl: 'js/views/items/index.html',
@@ -36,5 +37,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/items/:id/edit',
     templateUrl: 'js/views/items/edit.html',
     controller: 'ItemsEdit as edit'
+=======
+  .state('edit',{
+    url: '/edit',
+    templateUrl: 'js/views/items/edit.html',
+    controller: 'ItemEdit as edit'
+  })
+>>>>>>> 5a7792d44f53346e41f4214ce1e4efbbdde42d28
   $urlRouterProvider.otherwise('/');
 }

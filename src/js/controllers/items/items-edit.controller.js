@@ -4,15 +4,17 @@ angular
 
   ItemsEdit.$inject = ['Items','$stateParams','$state'];
   function ItemsEdit(Items,$stateParams,$state) {
-    cosnt vm = this;
+    const vm = this;
 
     vm.item = Items.get($stateParams);
     vm.update = itemsUpdate;
 
   function itemsUpdate() {
     Item
-      .update(vm.item)
+      .update({id: $stateParams.id}, vm.item)
       .$promise
-      .then(() => $state.go('itemsShow', $stateParams));
-  }
+      .then(() => {
+        $state.go('itemsShow');
+  });
+}
 }

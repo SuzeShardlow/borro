@@ -2,8 +2,8 @@ angular
 .module('toolio')
 .controller('ItemsNew', ItemsNew);
 
-ItemsNew.$inject = ['User', '$state'];
-function ItemsNew(User, $state){
+ItemsNew.$inject = ['Item', '$state'];
+function ItemsNew(Item, $state){
   const vm = this;
 
   vm.create = itemsCreate;
@@ -13,7 +13,6 @@ function ItemsNew(User, $state){
     .save(vm.item)
     .$promise
     .then(() =>
-      $state.go('itemsIndex');
-    });
+      $state.go('itemsIndex'));
+    }
   }
-}

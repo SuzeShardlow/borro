@@ -20,6 +20,11 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/login',
     templateUrl: 'js/views/users/login.html',
     controller: 'LoginCtrl as login'
-  });
+  })
+  .state('edit',{
+    url: '/edit',
+    templateUrl: 'js/views/items/edit.html',
+    controller: 'ItemEdit as edit'
+  })
   $urlRouterProvider.otherwise('/');
 }

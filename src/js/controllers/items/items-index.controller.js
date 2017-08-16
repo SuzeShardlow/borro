@@ -1,6 +1,6 @@
 angular
   .module('toolio')
-  .controller('ItemIndexCtrl', ItemsIndexCtrl);
+  .controller('ItemsIndexCtrl', ItemsIndexCtrl);
 
 ItemsIndexCtrl.$inject = ['Item'];
 function ItemsIndexCtrl(Item) {

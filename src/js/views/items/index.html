@@ -1,0 +1,7 @@
+<h1>Items</h1>
+
+<ul>
+  <li ng-repeat="item in itemsIndex.all">
+    <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
+  </li>
+</ul>

@@ -1,10 +1,9 @@
 angular
 .module('toolio')
-.controller('userShow', userShow);
+.controller('usersShowCtrl', usersShowCtrl);
 
-userShow.$inject = ['User', 'CurrentUserService'];
-function userShow(User, CurrentUserService) {
+usersShowCtrl.$inject = ['CurrentUserService'];
+function usersShowCtrl(CurrentUserService) {
   const vm = this;
   vm.user = CurrentUserService.currentUser;
-  console.log(vm.user);
 }

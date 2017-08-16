@@ -21,38 +21,31 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: 'js/views/users/login.html',
     controller: 'LoginCtrl as login'
   })
-<<<<<<< HEAD
   .state('itemsIndex', {
     url: '/items',
     templateUrl: 'js/views/items/index.html',
-    controller: 'ItemIndexCtrl as index'
+    controller: 'ItemsIndexCtrl as itemsIndex'
   })
-  .state('itemsNew', {
-    url: '/items/new',
-    templateUrl: 'js/views/items/new.html',
-    controller: 'ItemsNew as new'
-  })
-
-  .state('itemsEdit', {
-    url: '/items/:id/edit',
-    templateUrl: 'js/views/items/edit.html',
-    controller: 'ItemsEdit as edit'
-=======
-  .state('edit',{
-    url: '/items/:id/edit',
-    templateUrl: 'js/views/items/edit.html',
-    controller: 'EditCtrl as edit'
+  .state('itemsShow', {
+    url: '/items/:id',
+    templateUrl: 'js/views/items/show.html',
+    controller: 'ItemsShowCtrl as itemsShow'
   })
   .state('itemsNew', {
     url: '/items/new',
     templateUrl: 'js/views/items/new.html',
     controller: 'ItemsNewCtrl as itemsNew'
   })
-  .state('userShow', {
+  .state('itemsEdit',{
+    url: '/items/:id/edit',
+    templateUrl: 'js/views/items/edit.html',
+    controller: 'EditCtrl as edit'
+  })
+  .state('usersShow', {
     url: '/users/:id',
-    templateUrl: 'js/views/users/dashboard.html',
-    controller: 'userShow as userShow'
+    templateUrl: 'js/views/users/show.html',
+    controller: 'usersShowCtrl as usersShow'
   });
->>>>>>> 228be562d7914b5fd126ac7fe006c3fc865a51ab
+
   $urlRouterProvider.otherwise('/');
 }

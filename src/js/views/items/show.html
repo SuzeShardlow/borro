@@ -1,20 +1,20 @@
 <div>
-  <img ng-src="{{ show.item.photo }}">
+  <img ng-src="{{ itemsShow.item.photo }}">
 </div>
 
 <div>
-  <p><h1>{{ show.item.title }}</h1></p>
-  <p><h2>{{ show.item.type }}</h2></p>
-  <p><h3>{{ show.item.make }}</h3></p>
-  <p><h3>{{ show.item.model }}</h3></p>
+  <p><h1>{{ itemsShow.item.title }}</h1></p>
+  <p><h2>{{ itemsShow.item.type }}</h2></p>
+  <p><h3>{{ itemsShow.item.make }}</h3></p>
+  <p><h3>{{ itemsShow.item.model }}</h3></p>
+</div>
+
+<div ui-sref="usersShow({ id: itemsShow.item.owner._id })">
+  <p>{{ itemsShow.item.owner.firstName }} {{ itemsShow.item.owner.lastName }}</p>
 </div>
 
 <div>
-  <p>{{ show.user.photo }}</p>
-</div>
-
-<div>
-  <p>{{ show.item.noteFromTheOwner }}</p>
+  <p>{{ itemsShow.item.noteFromTheOwner }}</p>
 </div>
 
 <div>

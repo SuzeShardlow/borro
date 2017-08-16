@@ -9,16 +9,12 @@ function usersIndex(req, res) {
 }
 
 function usersShow(req, res) {
-  User.findById(req.params.id)
-  .populate('item')
+  User
+  .findById(req.params.id)
+  .populate('items')
   .exec()
   .then((user) => {
-    Item
-    .find({createdBy: user._id})
-    .exec()
-    .then(items => {
-      res.render('users/show', {user, items});
-    });
+    res.json(user);
   });
 }
 

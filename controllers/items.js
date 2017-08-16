@@ -10,6 +10,7 @@ function indexRoute(req, res) {
 }
 
 function createRoute(req, res, next) {
+  req.body.createdBy = req.user._id;
   Item
   .create(req.body)
   .then
@@ -18,7 +19,7 @@ function createRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then(user => {
-      user.item.push(item._id);
+      user.items.push(item._id);
       user.save();
       return res.status(200).json(item);
     })

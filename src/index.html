@@ -30,7 +30,7 @@
           <a ng-click="body.logout()" class="pure-menu-link">Logout</a>
         </li>
         <li class="pure-menu-item" ng-show="body.user">
-          <a ui-sref="dashboard" class="pure-menu-link">Dashboard</a>
+          <a ui-sref="userShow({id: body.user._id})" class="pure-menu-link">Dashboard</a>
         </li>
         <li class="pure-menu-item" ng-show="body.user">
           <a ui-sref="lend" class="pure-menu-link">Lend</a>

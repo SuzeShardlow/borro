@@ -32,7 +32,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'ItemsNewCtrl as itemsNew'
   })
   .state('userShow', {
-    url: '/userShow',
+    url: '/users/:id',
     templateUrl: 'js/views/users/dashboard.html',
     controller: 'userShow as userShow'
   });

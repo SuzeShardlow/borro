@@ -1,29 +1,34 @@
+<!DOCTYPE html>
 <h1>Dashboard</h1>
 
-<div>
-  <h1>Hi User</h1>
-  <p>You have a request pending.</p>
+<a ui-sref="itemsNew">New</a>
 
+
+<div>
+  <h1>Hi {{userShow.user.firstName}} </h1>
+  <p>You have a request pending.</p>
 </div>
 
 <div>
-  <img src="" alt="">
+  <img src="{{userShow.user.photo}}">
   //rating
   <h1>Member Since 2017</h1>
 </div>
 
 <div>
   <h1>Items Lending</h1>
-  <img src="" alt="">
-  <form>
-<input type="checkbox" name="" value="">Active<br>
-</form>
+    <div ng-repeat="item in userShow.user.item">
+
+    </div>
+  <img src="{{userShow.user.item.photo}}">
+  <input type="checkbox" value="Active">Active<br>
 </div>
+
 <div>
-    <h1>Items Borrowing</h1>
-    <img src="" alt="">
-    <form>
-  <input type="checkbox" name="" value="">Active<br>
+  <h1>Items Borrowing</h1>
+  <img>
+  <form>
+    <input type="checkbox" name="" value="">Active<br>
   </form>
   <h1>History:</h1>
   <ul>

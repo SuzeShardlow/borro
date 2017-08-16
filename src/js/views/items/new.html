@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<div class="">
+  <h1>Add a new item</h1>
+</div>
+
+<form ng-submit="itemsNew.create()">
+  <div class="">
+    <label for="title"></label>
+    <input type="text" name="title" value="" ng-model="itemsNew.item.title">
+  </div>
+
+  <div class="">
+    <select class="" name="category" ng-model="itemsNew.item.category">
+      <!-- <option value="{{ edit.item.category }}"></option> -->
+      <option ng-model="itemsNew.item.category">Gardening</option>
+      <option ng-model="itemsNew.item.category">Outdoors</option>
+      <option ng-model="itemsNew.item.category">DIY</option>
+      <option ng-model="itemsNew.item.category">Kitchen</option>
+      <option ng-model="itemsNew.item.category">Electrical Beauty</option>
+      <option ng-model="itemsNew.item.category">Entertainment</option>
+    </select>
+  </div>
+
+
+  <div class="">
+    <label for="type">Type of item</label>
+    <input type="text" name="type" id="type" ng-model="itemsNew.item.type">
+  </div>
+
+  <div class="">
+    <label for="make">Make</label>
+    <input type="text" name="make" id="make" ng-model="itemsNew.item.make">
+  </div>
+
+  <div class="">
+    <label for="model">Model</label>
+    <input type="text" name="model" id="model" ng-model="itemsNew.item.model">
+  </div>
+
+  <div class="">
+    <label for="photo">Photo</label>
+    <input type="text" name="photo" id="photo" ng-model="itemsNew.item.photo">
+  </div>
+
+  <div class="">
+    <label for="note">Information for the borrower</label>
+    <input type="text" name="note" id="note" ng-model="itemsNew.item.noteFromTheOwner">
+  </div>
+
+
+
+
+
+
+</form>

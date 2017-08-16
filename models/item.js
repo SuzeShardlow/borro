@@ -7,7 +7,8 @@ const itemSchema = new mongoose.Schema({
   make: { type: String, trim: true },
   model: { type: String, trim: true },
   photo: { type: Array, trim: true, required: true },
-  noteFromTheOwner: { type: String }
+  noteFromTheOwner: { type: String },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Item', itemSchema);

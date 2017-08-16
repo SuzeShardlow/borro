@@ -1,5 +1,6 @@
 const Item = require('../models/item');
 const User = require('../models/user');
+const Category = require('../models/category');
 
 function itemsIndex(req, res) {
   Item
@@ -11,27 +12,37 @@ function itemsIndex(req, res) {
 }
 
 function itemsCreate(req, res, next) {
-  req.body.createdBy = req.user._id;
-  Item
-  .create(req.body)
-  .then
-  .then(item => {
-    User
-    .findById(req.params.id)
-    .exec()
-    .then(user => {
-      user.items.push(item._id);
-      user.save();
-      return res.status(200).json(item);
-    })
-    .catch(next);
+  req.body.createdBy = req.user.id;
+  console.log(req.user);
+  console.log(req.body);
+  Category
+  .findOne({name: req.body.category})
+  .exec()
+  .then(category => {
+    req.body.category = category._id;
+    Item
+    .create(req.body)
+    .then(item => {
+      category.items.push(item._id);
+      category.save();
+      console.log(`CATEGORY ${category}`);
+      User
+      .findById(req.user.id)
+      .exec()
+      .then(user => {
+        user.items.push(item._id);
+        user.save();
+        return res.status(200).json(item);
+      })
+      .catch(err => res.status(500).json(err));
+    });
   });
 }
 
 function itemsShow(req, res) {
   Item
   .findById(req.params.id)
-  .populate('owner borrower')
+  .populate('owner category borrower')
   .exec()
   .then(item => {
     if (!item) res.status(404).json({message: 'no item found!'});

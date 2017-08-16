@@ -1,11 +1,11 @@
-const mongoose   = require('mongoose');
-const bluebird   = require('bluebird');
-const env        = require('../config/config');
+const mongoose = require('mongoose');
+const bluebird = require('bluebird');
+const env      = require('../config/config');
 
-
-const Item    = require('../models/item');
-const User    = require('../models/user');
-const Request = require('../models/request');
+const Item     = require('../models/item');
+const User     = require('../models/user');
+const Request  = require('../models/request');
+const Category = require('../models/category');
 
 
 mongoose.Promise = bluebird;
@@ -231,36 +231,68 @@ User
     sent_requests: [],
     recieved_requests: []
   }
-])
-.then(users => {
+]).then(users => {
   console.log(`${users.length} users have been successfully created.`);
-  return Item.create([
+
+  return Category.create([
     {
-      title: 'Great hair straightener!',
-      category: 'electrical beauty',
-      type: 'hair straighteners',
-      make: 'GHD',
-      model: '3.1B',
-      photo: 'https://boots.scene7.com/is/image/Boots/10217441?id=-Klmv1&fmt=jpg&fit=constrain,1&wid=504&hei=548',
-      noteFromTheOwner: 'I am happy to lend my hair straighteners to whoever needs it.',
-      owner: users[0]._id
+      name: 'Electrical Beauty',
+      items: []
     },
     {
-      title: 'Camping table and chairs, good conditions',
-      category: 'outdoors',
-      type: 'folding picnic table & chairs',
-      make: 'Outsunny',
-      photo: 'https://i.ebayimg.com/images/g/P7MAAOSw-0xYhDpp/s-l300.jpg',
-      noteFromTheOwner: '4 seats and 1 table foldable',
-      owner: users[1]._id
+      name: 'Outdoors',
+      items: []
+    },
+    {
+      name: 'Gardening',
+      items: []
+    },
+    {
+      name: 'DIY',
+      items: []
+    },
+    {
+      name: 'Entertainment',
+      items: []
+    },
+    {
+      name: 'Kitchen',
+      items: []
     }
-  ]);
-})
-.then(items => {
-  console.log(`${items.length} items have been successfully created.`);
-})
-.catch(err => console.log(err))
-.finally(() => mongoose.connection.close());
+  ]).then(categories => {
+    console.log(`${categories.length} categories have been successfully created.`);
+    return Item.create([
+      {
+        title: 'Great hair straightener!',
+        category: categories[0]._id,
+        type: 'hair straighteners',
+        make: 'GHD',
+        model: '3.1B',
+        photo: 'https://boots.scene7.com/is/image/Boots/10217441?id=-Klmv1&fmt=jpg&fit=constrain,1&wid=504&hei=548',
+        noteFromTheOwner: 'I am happy to lend my hair straighteners to whoever needs it.',
+        owner: users[0]._id
+      },
+      {
+        title: 'Camping table and chairs, good conditions',
+        category: categories[1]._id,
+        type: 'folding picnic table & chairs',
+        make: 'Outsunny',
+        photo: 'https://i.ebayimg.com/images/g/P7MAAOSw-0xYhDpp/s-l300.jpg',
+        noteFromTheOwner: '4 seats and 1 table foldable',
+        owner: users[1]._id
+      }
+    ]).then(items => {
+      console.log(`${items.length} items have been successfully created.`);
+      categories[0].items.push(items[0]._id);
+      categories[0].save();
+      categories[1].items.push(items[1]._id);
+      categories[1].save();
+    })
+    .catch(err => console.log(err))
+    .finally(() => mongoose.connection.close());
+  });
+
+});
 
 // Item
 // .create(itemData)

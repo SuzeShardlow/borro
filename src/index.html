@@ -33,6 +33,9 @@
           <a ui-sref="userShow({id: body.user._id})" class="pure-menu-link">Dashboard</a>
         </li>
         <li class="pure-menu-item" ng-show="body.user">
+          <a ui-sref="itemsIndex" class="pure-menu-link">Items</a>
+        </li>
+        <li class="pure-menu-item" ng-show="body.user">
           <a ui-sref="lend" class="pure-menu-link">Lend</a>
         </li>
         <li class="pure-menu-item" ng-show="body.user">

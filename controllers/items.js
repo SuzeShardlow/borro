@@ -30,6 +30,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res) {
   Item
   .findById(req.params.id)
+  .populate('owner')
   .exec()
   .then(item => {
     if (!item) res.status(404).json({message: 'no item found!'});

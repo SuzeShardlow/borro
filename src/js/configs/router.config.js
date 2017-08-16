@@ -21,15 +21,25 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: 'js/views/users/login.html',
     controller: 'LoginCtrl as login'
   })
-  .state('edit',{
-    url: '/items/:id/edit',
-    templateUrl: 'js/views/items/edit.html',
-    controller: 'EditCtrl as edit'
+  .state('itemsIndex', {
+    url: '/items',
+    templateUrl: 'js/views/items/index.html',
+    controller: 'ItemsIndexCtrl as itemsIndex'
+  })
+  .state('itemsShow', {
+    url: '/items/:id',
+    templateUrl: 'js/views/items/show.html',
+    controller: 'ItemsShowCtrl as itemsShow'
   })
   .state('itemsNew', {
     url: '/items/new',
     templateUrl: 'js/views/items/new.html',
     controller: 'ItemsNewCtrl as itemsNew'
+  })
+  .state('itemsEdit',{
+    url: '/items/:id/edit',
+    templateUrl: 'js/views/items/edit.html',
+    controller: 'EditCtrl as edit'
   })
   .state('userShow', {
     url: '/users/:id',

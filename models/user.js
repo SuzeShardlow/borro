@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   dob: { type: Date, trim: true },
   description: { type: String, trim: true },
   passwordHash: { type: String, required: true },
-  items: [{ type: mongoose.Schema.ObjectId, ref: 'Item' }]
+  items: []
 });
 
 // we don't want to store the password and password confirmation as strings in the schema, however we do need to check that they match and that they satisfy the criteria we have set down

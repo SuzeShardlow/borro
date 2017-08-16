@@ -9,17 +9,15 @@ function usersIndex(req, res) {
 }
 
 function usersShow(req, res) {
-  User.findById(req.params.id)
-    .populate('item')
-    .exec()
-    .then((user) => {
-      Item
-        .find({createdBy: user._id})
-        .exec()
-        .then(items => {
-          res.render('users/show', {user, items});
-        });
+  User
+  .findById(req.params.id)
+  .exec()
+  .then(user => {
+    Item.find({ owner: user._id }, (err, items) => {
+      user.items = items;
+      res.json(user);
     });
+  });
 }
 
 function usersUpdate(req, res) {

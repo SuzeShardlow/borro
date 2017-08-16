@@ -1,0 +1,19 @@
+<h1>{{ userShow.user.firstName }}'s profile page</h1>
+
+<img ng-src="{{ userShow.user.photo }}">
+
+<div>
+  <h2>Rating</h2>
+  <p>Member since 2017</p>
+</div>
+
+<div>
+  <h2>About {{ userShow.user.firstName }}</h2>
+</div>
+
+<div>
+  <h1>Items Lending</h1>
+  <div ng-repeat="item in userShow.user.item">
+    <img src="{{ userShow.user.item.photo }}">
+  </div>
+</div>

@@ -15,167 +15,6 @@ Item.collection.drop();
 User.collection.drop();
 Request.collection.drop();
 
-// const itemData = [{
-//   title: 'Great hair straightener!',
-//   category: 'electrical beauty',
-//   type: 'hair straighteners',
-//   make: 'GHD',
-//   model: '3.1B',
-//   photo: ['src/images/hair-straighteners1.png', 'src/images/hair-straighteners2.png', 'src/images/hair-straighteners3.png'],
-//   noteFromTheOwner: 'I am happy to lend my hair straighteners to whoever needs it.'
-// }, {
-//   title: 'good hairdryer',
-//   category: 'electrical beauty',
-//   type: 'hair dryer',
-//   make: 'Parlux',
-//   photo: ['src/images/hair-dryer-1.png'],
-//   noteFromTheOwner: ''
-// }, {
-//   title: 'Camping table and chairs, good conditions',
-//   category: 'outdoors',
-//   type: 'folding picnic table & chairs',
-//   make: 'Outsunny',
-//   photo: ['src/images/camping-table.png'],
-//   noteFromTheOwner: '4 seats and 1 table foldable'
-// }, {
-//   title: 'Camping gas stove in good working order',
-//   category: 'outdoors',
-//   type: 'camping gas stove',
-//   make: '	Delux super bleuet',
-//   photo: ['src/images/campingstove1.png', 'src/images/campingstove2.png', 'src/images/campingstove3.png'],
-//   noteFromTheOwner: 'Small camping gas stove ideal for minimal camping or days out.In working order.'
-// }, {
-//   title: 'Portable outdoors camping tent',
-//   category: 'outdoors',
-//   type: 'camping tent',
-//   make: 'Unbranded',
-//   photo: ['src/images/tent1.png', 'src/images/tent2.png', 'src/images/tent3.png'],
-//   noteFromTheOwner: 'This is a great camping tent that can be used as a canopy or even a tent shelter.'
-// }, {
-//   title: 'Nice double camping airbed',
-//   category: 'outdoors',
-//   type: 'camping airbed',
-//   make: '	Garden Mile',
-//   photo: ['src/images/campingbed1.png', 'src/images/campingbed2.png'],
-//   noteFromTheOwner: 'Waterproof self-inflating mattress with pillows which protects you from damp grass, sand, and bleachers.'
-// }, {
-//   title: 'Handy mini tool kit with various tools',
-//   category: 'DIY',
-//   type: 'screwdriver drive sockets',
-//   make: 'Unbranded',
-//   photo: ['src/images/toolbox1.png', 'src/images/toolbox2.png'],
-//   noteFromTheOwner: 'This is a 25 piece mini tool kit that has never been used and has been in a shed collecting dust.'
-// }, {
-//   title: 'Challenge cordless drill driver',
-//   category: 'DIY',
-//   type: 'drill',
-//   make: 'Challenge',
-//   model: 'CDT118F',
-//   photo: ['src/images/drill1.png', 'src/images/drill2.png'],
-//   noteFromTheOwner: 'Challenge CDT118F cordless drill driver. 18v'
-// }, {
-//   title: 'Chop saw',
-//   category: 'DIY',
-//   type: 'chop saw',
-//   make: 'Makita',
-//   photo: ['src/images/chopsaw.png'],
-//   noteFromTheOwner: 'makita chop saw, 240 volt, only used twice, works perfectly. Would be happy to help on any work you are undertaking.'
-// }, {
-//   title: 'Carving chisels & gouges old tools',
-//   category: 'DIY',
-//   type: 'carving chisels',
-//   make: ' by H Taylor',
-//   photo: ['src/images/carvingchisels1.png'],
-//   noteFromTheOwner: 'It is a set of 10 vintage carving chisels & gouges old tools by H Taylor. The chisels measure between 7 1/4" - 9 1/2" long x between 1/8" - 5/8" wide blades.'
-// }, {
-//   title: 'Builders wheel barrow',
-//   category: 'gardening',
-//   type: 'wheel barrow',
-//   make: '	Builders Wheelbarrow',
-//   photo: ['src/images/barrow1.png', 'src/images/barrow2.png']
-// }, {
-//   title: 'Mini gardening tools set' ,
-//   category: 'gardening',
-//   type: '	gardening set',
-//   make: 'Urneeds',
-//   photo: ['src/images/gardeningtool1.png', 'src/images/gardeningtool2.png'],
-//   noteFromTheOwner: 'Everything you need to love and care for your plants, all in one roomy, compact bag. It contains one mini shovel, one mini spade, one mini claw tool, one branch & twig pruner and one leaf & flower trimmer.'
-// }, {
-//   title: 'Petrol Rotary Lawnmower',
-//   category: 'gardening',
-//   type: 'lawnmower',
-//   make: 'Honda',
-//   model: 'HR173 17 inch',
-//   photo: ['src/images/mower1.png', 'src/images/mower2.png'],
-//   noteFromTheOwner: 'Keep your grass clean! Recently serviced with new oil, air filter and plug. Newly sharpened blade'
-// }, {
-//   title: 'Garden tool kit',
-//   category: 'gardening',
-//   type: 'garden tool kit',
-//   make: 'A Syle',
-//   photo: ['src/images/gardentoolkit.png'],
-//   noteFromTheOwner: 'Good quality gardening set including a shovel, a hoe, a bow, a rake, a steel rake and a scraper.'
-// }, {
-//   title: 'Kenwood blender',
-//   category: 'kitchen',
-//   type: 'blender',
-//   make: 'Kenwood',
-//   model: 'kMix BLX50',
-//   photo: ['src/images/blender1.png', 'src/images/blender2.png'],
-//   noteFromTheOwner: 'Good little blender for smoothies and dips and sauces. Nice glass bottle, nothing a dishwasher could not blast off'
-// }, {
-//   title: 'Juicer',
-//   category: 'kitchen',
-//   type: 'juicer',
-//   make: 'Phillips',
-//   photo: ['src/images/juicer1.png', 'src/images/juicer2.png'],
-//   noteFromTheOwner: 'I am happy to lend my juicer to anyone '
-// }, {
-//   title: 'Spiralizer',
-//   category: 'kitchen',
-//   type: 'spiralizer',
-//   make: 'Lakeland',
-//   photo: ['src/images/spiralizer.png'],
-//   noteFromTheOwner: 'Make spirals and beautiful rubons.'
-// }, {
-//   title: 'Great powerful hand mixer',
-//   category: 'kitchen',
-//   type: 'mixer',
-//   make: 'Breville',
-//   model: 'VFP069',
-//   photo: ['src/images/handmixer.png'],
-//   noteFromTheOwner: 'Breville Hand Mixers have a 200 watt motor and 5 speed settings.'
-// }, {
-//   title: 'Amazing raclette party!',
-//   category: 'kitchen',
-//   type: 'raclette',
-//   make: 'Tefal',
-//   photo: ['src/images/raclette.png'],
-//   noteFromTheOwner: 'Enjoy a great raclette party with your friends. Have 6 little pans.'
-// }, {
-//   title: 'Jaws',
-//   category: 'entertainment',
-//   type: 'dvd',
-//   photo: ['src/images/jawsdvd.png']
-// }, {
-//   title: 'Pulp Fiction - To watch!',
-//   category: 'entertainment',
-//   type: 'dvd',
-//   photo: ['src/images/pulpfictiondvd.png'],
-//   noteFromTheOwner: 'The greatest movie I have ever seen! '
-// }, {
-//   title: 'Baby Boss',
-//   category: 'entertainment',
-//   type: 'dvd',
-//   photo: ['src/images/babybossdvd.png'],
-//   noteFromTheOwner: 'I really enjoyed that movie and I really want to share the joy.'
-// }, {
-//   title: 'Hackers',
-//   category: 'entertainment',
-//   type: 'dvd',
-//   photo: ['src/images/Hackersdvd.png'],
-//   noteFromTheOwner: 'This is the reason I became a coder. Must watch!'
-// }];
 
 User
 .create([
@@ -268,34 +107,235 @@ User
         type: 'hair straighteners',
         make: 'GHD',
         model: '3.1B',
-        photo: 'https://boots.scene7.com/is/image/Boots/10217441?id=-Klmv1&fmt=jpg&fit=constrain,1&wid=504&hei=548',
+        photo: 'http://i.imgur.com/Xjrah0A.png',
         noteFromTheOwner: 'I am happy to lend my hair straighteners to whoever needs it.',
         owner: users[0]._id
-      },
-      {
+      }, {
+        title: 'good hairdryer',
+        category: categories[0]._id,
+        type: 'hair dryer',
+        make: 'Parlux',
+        photo: 'http://i.imgur.com/gNdCP54.png',
+        noteFromTheOwner: '',
+        owner: users[0]._id
+      }, {
         title: 'Camping table and chairs, good conditions',
         category: categories[1]._id,
         type: 'folding picnic table & chairs',
         make: 'Outsunny',
-        photo: 'https://i.ebayimg.com/images/g/P7MAAOSw-0xYhDpp/s-l300.jpg',
+        photo: 'http://i.imgur.com/556DjJo.png',
         noteFromTheOwner: '4 seats and 1 table foldable',
         owner: users[1]._id
+      }, {
+        title: 'Camping gas stove in good working order',
+        category: categories[1]._id,
+        type: 'camping gas stove',
+        make: '	Delux super bleuet',
+        photo: 'http://i.imgur.com/5Ymgtlp.png',
+        noteFromTheOwner: 'Small camping gas stove ideal for minimal camping or days out.In working order.',
+        owner: users[1]._id
+      }, {
+        title: 'Portable outdoors camping tent',
+        category: categories[1]._id,
+        type: 'camping tent',
+        make: 'Unbranded',
+        photo: 'http://i.imgur.com/YLSds6z.png',
+        noteFromTheOwner: 'This is a great camping tent that can be used as a canopy or even a tent shelter.',
+        owner: users[1]._id
+      }, {
+        title: 'Nice double camping airbed',
+        category: categories[1]._id,
+        type: 'camping airbed',
+        make: '	Garden Mile',
+        photo: ['http://i.imgur.com/FcT3jVN.png', 'http://i.imgur.com/axlxBMW.png'],
+        noteFromTheOwner: 'Waterproof self-inflating mattress with pillows which protects you from damp grass, sand, and bleachers.',
+        owner: users[1]._id
+      }, {
+        title: 'Handy mini tool kit with various tools',
+        category: categories[3]._id,
+        type: 'screwdriver drive sockets',
+        make: 'Unbranded',
+        photo: ['http://i.imgur.com/YKElfj8.png', 'http://i.imgur.com/21ZIB0v.png'],
+        noteFromTheOwner: 'This is a 25 piece mini tool kit that has never been used and has been in a shed collecting dust.',
+        owner: users[2]._id
+      }, {
+        title: 'Challenge cordless drill driver',
+        category: categories[3]._id,
+        type: 'drill',
+        make: 'Challenge',
+        model: 'CDT118F',
+        photo: ['http://i.imgur.com/6AtTdm9.png', 'http://i.imgur.com/DMesI9z.png'],
+        noteFromTheOwner: 'Challenge CDT118F cordless drill driver. 18v',
+        owner: users[2]._id
+      }, {
+        title: 'Chop saw',
+        category: categories[3]._id,
+        type: 'chop saw',
+        make: 'Makita',
+        photo: ['http://i.imgur.com/uVGpCqn.png'],
+        noteFromTheOwner: 'makita chop saw, 240 volt, only used twice, works perfectly. Would be happy to help on any work you are undertaking.',
+        owner: users[2]._id
+      }, {
+        title: 'Carving chisels & gouges old tools',
+        category: categories[3]._id,
+        type: 'carving chisels',
+        make: ' by H Taylor',
+        photo: ['http://i.imgur.com/4B9GFDK.png'],
+        noteFromTheOwner: 'It is a set of 10 vintage carving chisels & gouges old tools by H Taylor. The chisels measure between 7 1/4" - 9 1/2" long x between 1/8" - 5/8" wide blades.',
+        owner: users[2]._id
+      }, {
+        title: 'Builders wheel barrow',
+        category: categories[2]._id,
+        type: 'wheel barrow',
+        make: '	Builders Wheelbarrow',
+        photo: 'http://i.imgur.com/7hgwoPC.png',
+        owner: users[0]._id
+      }, {
+        title: 'Mini gardening tools set' ,
+        category: categories[2]._id,
+        type: '	gardening set',
+        make: 'Urneeds',
+        photo: 'http://i.imgur.com/GqUEOGd.png',
+        noteFromTheOwner: 'Everything you need to love and care for your plants, all in one roomy, compact bag. It contains one mini shovel, one mini spade, one mini claw tool, one branch & twig pruner and one leaf & flower trimmer.',
+        owner: users[0]._id
+      }, {
+        title: 'Petrol Rotary Lawnmower',
+        category: categories[2]._id,
+        type: 'lawnmower',
+        make: 'Honda',
+        model: 'HR173 17 inch',
+        photo: 'http://i.imgur.com/kd0X3Nl.png',
+        noteFromTheOwner: 'Keep your grass clean! Recently serviced with new oil, air filter and plug. Newly sharpened blade',
+        owner: users[2]._id
+      }, {
+        title: 'Garden tool kit',
+        category: categories[2]._id,
+        type: 'garden tool kit',
+        make: 'A Syle',
+        photo: 'http://i.imgur.com/U4J3OHA.png',
+        noteFromTheOwner: 'Good quality gardening set including a shovel, a hoe, a bow, a rake, a steel rake and a scraper.',
+        owner: users[0]._id
+      }, {
+        title: 'Kenwood blender',
+        category: categories[5]._id,
+        type: 'blender',
+        make: 'Kenwood',
+        model: 'kMix BLX50',
+        photo: ['http://i.imgur.com/afzpNu4.png', 'http://i.imgur.com/WPdiFgz.png'],
+        noteFromTheOwner: 'Good little blender for smoothies and dips and sauces. Nice glass bottle, nothing a dishwasher could not blast off',
+        owner: users[3]._id
+      }, {
+        title: 'Juicer',
+        category: categories[5]._id,
+        type: 'juicer',
+        make: 'Phillips',
+        photo: ['http://i.imgur.com/BhL7wHm.png', 'http://i.imgur.com/kccQFxP.png'],
+        noteFromTheOwner: 'I am happy to lend my juicer to anyone ',
+        owner: users[3]._id
+      }, {
+        title: 'Spiralizer',
+        category: categories[5]._id,
+        type: 'spiralizer',
+        make: 'Lakeland',
+        photo: ['http://i.imgur.com/L3ouw3h.png'],
+        noteFromTheOwner: 'Make spirals and beautiful rubons.',
+        owner: users[1]._id
+      }, {
+        title: 'Great powerful hand mixer',
+        category: categories[5]._id,
+        type: 'mixer',
+        make: 'Breville',
+        model: 'VFP069',
+        photo: ['http://i.imgur.com/cgMPi79.png'],
+        noteFromTheOwner: 'Breville Hand Mixers have a 200 watt motor and 5 speed settings.',
+        owner: users[3]._id
+      }, {
+        title: 'Amazing raclette party!',
+        category: categories[5]._id,
+        type: 'raclette',
+        make: 'Tefal',
+        photo: ['http://i.imgur.com/o9gGyzK.png'],
+        noteFromTheOwner: 'Enjoy a great raclette party with your friends. Have 6 little pans.',
+        owner: users[1]._id
+      }, {
+        title: 'Jaws',
+        category: categories[4]._id,
+        type: 'dvd',
+        photo: ['http://i.imgur.com/MXOeJVP.png'],
+        owner: users[1]._id
+      }, {
+        title: 'Pulp Fiction - To watch!',
+        category: categories[4]._id,
+        type: 'dvd',
+        photo: ['http://i.imgur.com/Scva1aL.png'],
+        noteFromTheOwner: 'The greatest movie I have ever seen! ',
+        owner: users[1]._id
+      }, {
+        title: 'Baby Boss',
+        category: categories[4]._id,
+        type: 'dvd',
+        photo: ['http://i.imgur.com/18kOOem.png'],
+        noteFromTheOwner: 'I really enjoyed that movie and I really want to share the joy.',
+        owner: users[3]._id
+      }, {
+        title: 'Hackers',
+        category: categories[4]._id,
+        type: 'dvd',
+        photo: ['http://i.imgur.com/CeohAUa.png'],
+        noteFromTheOwner: 'This is the reason I became a coder. Must watch!',
+        owner: users[3]._id
       }
     ]).then(items => {
       console.log(`${items.length} items have been successfully created.`);
       categories[0].items.push(items[0]._id);
       categories[0].save();
-      categories[1].items.push(items[1]._id);
+      categories[0].items.push(items[1]._id);
+      categories[0].save();
+      categories[1].items.push(items[2]._id);
       categories[1].save();
+      categories[1].items.push(items[3]._id);
+      categories[1].save();
+      categories[1].items.push(items[4]._id);
+      categories[1].save();
+      categories[1].items.push(items[5]._id);
+      categories[1].save();
+      categories[3].items.push(items[6]._id);
+      categories[3].save();
+      categories[3].items.push(items[7]._id);
+      categories[3].save();
+      categories[3].items.push(items[8]._id);
+      categories[3].save();
+      categories[3].items.push(items[9]._id);
+      categories[3].save();
+      categories[2].items.push(items[10]._id);
+      categories[2].save();
+      categories[2].items.push(items[11]._id);
+      categories[2].save();
+      categories[2].items.push(items[12]._id);
+      categories[2].save();
+      categories[2].items.push(items[13]._id);
+      categories[2].save();
+      categories[5].items.push(items[14]._id);
+      categories[5].save();
+      categories[5].items.push(items[15]._id);
+      categories[5].save();
+      categories[5].items.push(items[16]._id);
+      categories[5].save();
+      categories[5].items.push(items[17]._id);
+      categories[5].save();
+      categories[5].items.push(items[18]._id);
+      categories[5].save();
+      categories[4].items.push(items[19]._id);
+      categories[4].save();
+      categories[4].items.push(items[20]._id);
+      categories[4].save();
+      categories[4].items.push(items[21]._id);
+      categories[4].save();
+      categories[4].items.push(items[22]._id);
+      categories[4].save();
     })
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
   });
 
 });
-
-// Item
-// .create(itemData)
-// .then(items => console.log(`${items.length} items created!`))
-// .catch(err => console.log(err))
-// .finally(() => mongoose.connection.close());

@@ -42,11 +42,14 @@
 <div>
   <h2>{{ usersShow.user.firstName}}'s Items</h2>
 
+<div class="pure-u-1-5 pure-img">
   <ul>
     <li ng-repeat="item in usersShow.user.items">
     <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
+    <img src="{{item.photo}}" class="profileItemPic">
   </li>
   </ul>
+  </div>
 </div>
 
 <div>

@@ -11,7 +11,7 @@ function itemsIndex(req, res) {
   .catch(err => res.status(500).json(err));
 }
 
-function itemsCreate(req, res, next) {
+function itemsCreate(req, res) {
   req.body.createdBy = req.user.id;
   console.log(req.user);
   console.log(req.body);

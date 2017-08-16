@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <div>
   <img ng-src="{{ itemsShow.item.photo }}">
 </div>
 
 <div>
   <p><h1>{{ itemsShow.item.title }}</h1></p>
-  <p><h2>{{ itemsShow.item.type }}</h2></p>
-  <p><h2>{{ itemsShow.item.category.name }}</h2></p>
-  <p><h3>{{ itemsShow.item.make }}</h3></p>
-  <p><h3>{{ itemsShow.item.model }}</h3></p>
+  <h3>Type: {{ itemsShow.item.type }}</h3>
+  <h3>Category: {{ itemsShow.item.category.name }}</h3>
+  <h3>Brand: {{ itemsShow.item.make }}</h3>
+  <h3>{{ itemsShow.item.model }}</h3>
 </div>
 
 <div ui-sref="usersShow({ id: itemsShow.item.owner._id })">
@@ -33,8 +34,8 @@
 <div>
   <h2>Make a request</h2>
   <form ng-submit="itemsShow.createRequest()">
-    <label for="message">Message</label>
-    <textarea name="message" ng-model="itemsShow.request.message"></textarea>
+    <label for="message">Message</label><br/>
+    <textarea name="message" ng-model="itemsShow.request.message"></textarea><br/>
     <button>Submit Request</button>
   </form>
 </div>

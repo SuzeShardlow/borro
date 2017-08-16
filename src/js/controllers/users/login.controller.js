@@ -11,9 +11,9 @@ function LoginCtrl(User, CurrentUserService, $state) {
     User
       .login(vm.user)
       .$promise
-      .then(() => {
+      .then(data => {
         CurrentUserService.getUser();
-        $state.go('userShow');
+        $state.go('userShow', { id: data.user._id });
       }, err => {
         console.log(err);
       });

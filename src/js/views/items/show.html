@@ -2,8 +2,6 @@
   <img ng-src="{{ itemsShow.item.photo }}">
 </div>
 
-{{ itemsShow.owner }}
-
 <div>
   <p><h1>{{ itemsShow.item.title }}</h1></p>
   <p><h2>{{ itemsShow.item.type }}</h2></p>
@@ -11,8 +9,8 @@
   <p><h3>{{ itemsShow.item.model }}</h3></p>
 </div>
 
-<div>
-  <p></p>
+<div ui-sref="usersShow({ id: itemsShow.item.owner._id })">
+  <p>{{ itemsShow.item.owner.firstName }} {{ itemsShow.item.owner.lastName }}</p>
 </div>
 
 <div>

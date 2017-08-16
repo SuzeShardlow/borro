@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<h1>Dashboard</h1>
+
+<a ui-sref="itemsNew">New</a>
+
+
+<div>
+  <h1>Hi {{usersShow.user.firstName}} </h1>
+  <p>You have a request pending.</p>
+</div>
+
+<div>
+  <img src="{{usersShow.user.photo}}">
+  <!-- <h1>Member Since 2017</h1> -->
+</div>
+
+<div>
+  <h2>{{ usersShow.user.firstName}}'s Items</h2>
+
+  <ul>
+    <li ng-repeat="item in usersShow.user.items">
+    <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
+  </li>
+  </ul>
+</div>
+
+<!-- <div>
+  <h1>Items Lending</h1>
+    <div ng-repeat="item in usersShow.user.item">
+
+    </div>
+  <img src="{{usersShow.user.item.photo}}">
+  <input type="checkbox" value="Active">Active<br>
+</div>
+
+<div>
+  <h1>Items Borrowing</h1>
+  <img>
+  <form>
+    <input type="checkbox" name="" value="">Active<br>
+  </form>
+  <h1>History:</h1>
+  <ul>
+    <li></li>
+
+  </ul>
+
+</div> -->

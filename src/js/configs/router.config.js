@@ -41,10 +41,10 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: 'js/views/items/edit.html',
     controller: 'EditCtrl as edit'
   })
-  .state('userShow', {
+  .state('usersShow', {
     url: '/users/:id',
-    templateUrl: 'js/views/users/dashboard.html',
-    controller: 'userShow as userShow'
+    templateUrl: 'js/views/users/show.html',
+    controller: 'usersShowCtrl as usersShow'
   });
   $urlRouterProvider.otherwise('/');
 }

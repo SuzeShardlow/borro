@@ -11,10 +11,12 @@ function usersIndex(req, res) {
 function usersShow(req, res) {
   User
   .findById(req.params.id)
-  .populate('items')
   .exec()
-  .then((user) => {
-    res.json(user);
+  .then(user => {
+    Item.find({ owner: user._id }, (err, items) => {
+      user.items = items;
+      res.json(user);
+    });
   });
 }
 

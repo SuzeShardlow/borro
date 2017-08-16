@@ -30,7 +30,7 @@
           <a ng-click="body.logout()" class="pure-menu-link">Logout</a>
         </li>
         <li class="pure-menu-item" ng-show="body.user">
-          <a ui-sref="userShow({id: body.user._id})" class="pure-menu-link">Dashboard</a>
+          <a ui-sref="usersShow({id: body.user._id})" class="pure-menu-link">Profile</a>
         </li>
         <li class="pure-menu-item" ng-show="body.user">
           <a ui-sref="itemsIndex" class="pure-menu-link">Items</a>
@@ -42,7 +42,7 @@
           <a ui-sref="borrow" class="pure-menu-link">Borrow</a>
           <div>
           <!-- <div class="pure-menu pure-menu-horizontal" ng-show="$state === borrow | categories | itemsShow"> -->
-            <ul class="pure-menu-list">
+            <!-- <ul class="pure-menu-list">
               <li class="pure-menu-item" >
                 <a ui-sref="electricalBeauty" class="pure-menu-link">Electrical Beauty</a>
               </li>
@@ -61,7 +61,7 @@
               <li class="pure-menu-item" >
                 <a ui-sref="kitchen" class="pure-menu-link">Kitchen</a>
               </li>
-            </ul>
+            </ul> -->
           </div>
         </li>
       </ul>

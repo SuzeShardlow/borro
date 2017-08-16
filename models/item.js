@@ -6,9 +6,10 @@ const itemSchema = new mongoose.Schema({
   type: { type: String, trim: true, required: true },
   make: { type: String, trim: true },
   model: { type: String, trim: true },
-  photo: { type: Array, trim: true, required: true },
+  photo: { type: String, trim: true, required: true },
   noteFromTheOwner: { type: String },
-  owner: { type: mongoose.Schema.ObjectId, ref: 'User' }
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  borrower: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Item', itemSchema);

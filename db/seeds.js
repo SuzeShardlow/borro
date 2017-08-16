@@ -1,14 +1,19 @@
 const mongoose   = require('mongoose');
-mongoose.Promise = require('bluebird');
-const Item = require('../models/item');
-const User = require('../models/user');
+const bluebird   = require('bluebird');
+const env        = require('../config/config');
 
-const env = require('../config/config');
 
+const Item    = require('../models/item');
+const User    = require('../models/user');
+const Request = require('../models/request');
+
+
+mongoose.Promise = bluebird;
 mongoose.connect(env.db);
 
 Item.collection.drop();
 User.collection.drop();
+Request.collection.drop();
 
 // const itemData = [{
 //   title: 'Great hair straightener!',
@@ -183,7 +188,9 @@ User
     description: 'wendy',
     password: 'password',
     passwordConfirmation: 'password',
-    items: []
+    items: [],
+    sent_requests: [],
+    recieved_requests: []
   },
   {
     firstName: 'kenny',
@@ -194,7 +201,9 @@ User
     description: 'kenny',
     password: 'password',
     passwordConfirmation: 'password',
-    items: []
+    items: [],
+    sent_requests: [],
+    recieved_requests: []
   },
   {
     firstName: 'eric',
@@ -205,7 +214,9 @@ User
     description: 'eric',
     password: 'password',
     passwordConfirmation: 'password',
-    items: []
+    items: [],
+    sent_requests: [],
+    recieved_requests: []
   },
   {
     firstName: 'jenny',
@@ -216,7 +227,9 @@ User
     description: 'jenny',
     password: 'password',
     passwordConfirmation: 'password',
-    items: []
+    items: [],
+    sent_requests: [],
+    recieved_requests: []
   }
 ])
 .then(users => {

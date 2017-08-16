@@ -30,15 +30,13 @@ router.route('/users/:id')
 
 // Requests
 router.route('/requests')
-  .get(requests.index)
   .post(requests.create);
 router.route('/requests/:id')
-  .put(requests.edit)
   .delete(requests.delete);
 router.route('/requests/:id/accept')
-  .post(requests.accept);
+  .get(requests.accept);
 router.route('/requests/:id/reject')
-  .post(requests.reject);
+  .get(requests.reject);
 
 
 module.exports = router;

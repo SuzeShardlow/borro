@@ -1,7 +1,7 @@
 <h1>Items</h1>
 
 <ul>
-  <li ng-repeat="item in itemsIndex.all">
+  <li ng-repeat="item in itemsIndex.all" ng-show="item.owner._id !== body.user._id && item.borrower !== body.user._id">
     <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
   </li>
 </ul>

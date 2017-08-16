@@ -1,15 +1,16 @@
 const Item = require('../models/item');
 const User = require('../models/user');
 
-function indexRoute(req, res) {
+function itemsIndex(req, res) {
   Item
   .find()
+  .populate('owner')
   .exec()
   .then(items => res.status(200).json(items))
   .catch(err => res.status(500).json(err));
 }
 
-function createRoute(req, res, next) {
+function itemsCreate(req, res, next) {
   req.body.createdBy = req.user._id;
   Item
   .create(req.body)
@@ -27,10 +28,10 @@ function createRoute(req, res, next) {
   });
 }
 
-function showRoute(req, res) {
+function itemsShow(req, res) {
   Item
   .findById(req.params.id)
-  .populate('owner')
+  .populate('owner borrower')
   .exec()
   .then(item => {
     if (!item) res.status(404).json({message: 'no item found!'});
@@ -39,7 +40,7 @@ function showRoute(req, res) {
   .catch(err => res.status(500).json(err));
 }
 
-function updateRoute(req, res) {
+function itemsUpdate(req, res) {
   Item
   .findById(req.params.id)
   .exec()
@@ -54,7 +55,7 @@ function updateRoute(req, res) {
   .catch(err => res.status(500).json(err));
 }
 
-function deleteRoute(req, res) {
+function itemsDelete(req, res) {
   Item
   .findById(req.params.id)
   .exec()
@@ -67,9 +68,9 @@ function deleteRoute(req, res) {
 }
 
 module.exports = {
-  index: indexRoute,
-  create: createRoute,
-  show: showRoute,
-  update: updateRoute,
-  delete: deleteRoute
+  index: itemsIndex,
+  create: itemsCreate,
+  show: itemsShow,
+  update: itemsUpdate,
+  delete: itemsDelete
 };

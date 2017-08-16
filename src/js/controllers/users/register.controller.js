@@ -14,7 +14,7 @@ function RegisterCtrl(User, CurrentUserService, $state){
     .$promise
     .then(data => {
       CurrentUserService.getUser();
-      $state.go('userShow', { id: data.user._id});
+      $state.go('usersShow', { id: data.user._id});
     });
   }
 }

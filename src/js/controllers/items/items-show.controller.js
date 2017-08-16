@@ -2,22 +2,28 @@ angular
   .module('toolio')
   .controller('ItemsShowCtrl', ItemsShowCtrl);
 
-ItemsShowCtrl.$inject = ['Item', 'User', '$stateParams', '$state'];
-function ItemsShowCtrl(Item, User, $stateParams, $state) {
+ItemsShowCtrl.$inject = ['Item', 'Request', 'CurrentUserService', '$stateParams', '$state'];
+function ItemsShowCtrl(Item, Request, CurrentUserService, $stateParams, $state) {
   const vm = this;
 
-  vm.item   = Item.get($stateParams);
+  vm.item          = Item.get($stateParams);
+  vm.createRequest = createRequest;
 
+  function createRequest() {
+    vm.request.status      = 'pending';
+    vm.request.borrower = CurrentUserService.currentUser._id;
+    vm.request.owner    = vm.item.owner._id;
+    vm.request.item     = vm.item._id;
 
+    Request
+      .save(vm.request)
+      .$promise
+      .then(request => {
+        console.log(request);
+        vm.request = {};
+      });
+  }
 
-
-
-
-
-
-
-
-  
   // vm.openModal = openModal;
   //
   // function openModal() {

@@ -4,13 +4,17 @@ angular
 
 ItemsNewCtrl.$inject = ['Item', '$state'];
 function ItemsNewCtrl(Item, $state){
-  const items = this;
+  const vm = this;
 
-  items.create = itemsCreate;
+  vm.create = itemsCreate;
+
+
+  vm.list = ['Electrical Beauty', 'Outdoors', 'Gardening', 'DIY', 'Entertainment', 'Kitchen'];
+  // $scope.list = ['Electrical Beauty'}, 'Outdoors', 'Gardening', 'DIY', 'Entertainment', 'Kitchen'];
 
   function itemsCreate() {
     Item
-    .save(items.item)
+    .save(vm.item)
     .$promise
     .then(() =>
     $state.go('itemsIndex'));

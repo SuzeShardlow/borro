@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const itemSchema = new mongoose.Schema({
   title: { type: String, trim: true, required: true },
-  category: { type: String, required: true },
+  category: { type: mongoose.Schema.ObjectId, ref: 'Category' },
   type: { type: String, trim: true, required: true },
   make: { type: String, trim: true },
   model: { type: String, trim: true },

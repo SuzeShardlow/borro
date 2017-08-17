@@ -1,51 +1,53 @@
 <!DOCTYPE html>
+<div class="row pure-g">
+  <ul class="grid content-center-v content-center-h pure-u-1-4">
+    <li class="pure-u-4-5"><img src="{{usersShow.user.photo}}"></li>
+    <li class="pure-u-4-5"><h1>Hi, {{usersShow.user.firstName}}!</h1></li>
+  </ul>
+</div>
+
 <div class="row">
-    <ul class="pure-g grid content-center-v content-center-h pure-u-16-24">
-      <li class="pure-u-8-24"><img src="{{usersShow.user.photo}}"></li>
-      <li class="pure-u-8-24"><h1>Hi, {{usersShow.user.firstName}}!</h1></li>
-    </ul>
-  </div>
+  <h2>Borrowing and Lending Requests</h2>
 
-  <div class="row">
-    <h2>Borrowing and Lending Requests</h2>
+  <h4>Requests You Have Sent</h4>
+  <ul>
+    <li ng-repeat="request in usersShow.user.sent_requests" ng-show="request.status === 'pending'">
+      <div>
+        <h2>You wish to borrow {{ request.owner.firstName }}'s {{ request.item.title }}</h2>
+        <button ng-click="usersShow.deleteRequest(request)">Delete</button>
+      </div>
+    </li>
+  </ul>
 
-    <h4>Requests You Have Sent</h4>
-    <ul>
-      <li ng-repeat="request in usersShow.user.sent_requests" ng-show="request.status === 'pending'">
-        <div>
-          <h2>You wish to borrow {{ request.owner.firstName }}'s {{ request.item.title }}</h2>
-          <button ng-click="usersShow.deleteRequest(request)">Delete</button>
-        </div>
-      </li>
-    </ul>
-
-    <h4>Received Requests</h4>
-    <ul>
-      <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'pending'">
-        <div>
-          <h3>{{ request.borrower.firstName }} wants to borrow your {{ request.item.title }}</h3>
-          <p><em>{{ request.message}}</em></p>
-          <button ng-click="usersShow.acceptRequest(request)">Accept</button>
-          <button ng-click="usersShow.rejectRequest(request)">Reject</button>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <h4>Received Requests</h4>
+  <ul>
+    <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'pending'">
+      <div>
+        <h3>{{ request.borrower.firstName }} wants to borrow your {{ request.item.title }}</h3>
+        <p><em>{{ request.message}}</em></p>
+        <button ng-click="usersShow.acceptRequest(request)">Accept</button>
+        <button ng-click="usersShow.rejectRequest(request)">Reject</button>
+      </div>
+    </li>
+  </ul>
+</div>
 
 
-  <div class="row">
-    <h2>Your Items</h2>
+<div class="row">
+  <h2>Your Items</h2>
 
-    <h3>
-<a class="pure-button button-secondary" ui-sref="itemsNew">Add a new item</a></h3>
+  <h3>
+    <a class="pure-button button-secondary" ui-sref="itemsNew">Add a new item</a></h3>
 
     <div>
       <ul class="pure-g">
-        <li class="pure-u-1-4" ng-repeat="item in usersShow.user.items">
+        <li class="pure-u-1-4" ng-repeat="item in usersShow.user.items" >
 
-          <img src="{{item.photo}}" class="profileItemPic">
+          <div ui-sref="itemsShow({ id: item._id })">
+            <img src="{{item.photo}}" class="profileItemPic pure-u-4-5">
+            <p class="pure-u-4-5">{{ item.title }}</p>
+          </div>
 
-          <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
         </li>
       </ul>
     </div>
@@ -73,4 +75,3 @@
       </li>
     </ul>
   </div>
-</div>

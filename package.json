@@ -4,7 +4,7 @@
   "description": "Project",
   "main": "index.js",
   "scripts": {
-    "postinstall": "bower install && gulp deploy"
+    "test": "node_modules/.bin/_mocha"
   },
   "author": "Alex Chin <alex@alexchin.co.uk>",
   "license": "ISC",
@@ -97,9 +97,6 @@
     "mocha": "^3.5.0",
     "require-dir": "^0.3.1",
     "supertest": "^3.0.0"
-  },
-  "scripts": {
-     "test": "node_modules/.bin/_mocha"
   },
   "repository": "git@github.com:SuzeShardlow/WDI_GROUP_PROJECT.git"
 }

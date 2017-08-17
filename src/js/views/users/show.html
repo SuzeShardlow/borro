@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<div style=" ">
-
-
-
-
-  <div class="row" >
+<div class="row">
     <ul class="pure-g grid content-center-v content-center-h pure-u-16-24">
       <li class="pure-u-8-24"><img src="{{usersShow.user.photo}}"></li>
-      <li class="pure-u-8-24"><h1>Hi {{usersShow.user.firstName}}!</h1></li>
+      <li class="pure-u-8-24"><h1>Hi, {{usersShow.user.firstName}}!</h1></li>
     </ul>
   </div>
 
-
-  <div id="borrow-lend">
+  <div class="row">
     <h2>Borrowing and Lending Requests</h2>
 
     <h4>Requests You Have Sent</h4>
@@ -39,16 +33,19 @@
   </div>
 
 
-  <div>
+  <div class="row">
     <h2>Your Items</h2>
 
-    <h3><a ui-sref="itemsNew">Add a new item</a></h3>
+    <h3>
+<a class="pure-button button-secondary" ui-sref="itemsNew">Add a new item</a></h3>
 
-    <div class="pure-u-1-5 pure-img">
-      <ul>
-        <li ng-repeat="item in usersShow.user.items">
-          <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
+    <div>
+      <ul class="pure-g">
+        <li class="pure-u-1-4" ng-repeat="item in usersShow.user.items">
+
           <img src="{{item.photo}}" class="profileItemPic">
+
+          <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
         </li>
       </ul>
     </div>
@@ -76,5 +73,4 @@
       </li>
     </ul>
   </div>
-    </div>
 </div>

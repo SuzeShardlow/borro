@@ -12,7 +12,7 @@ function usersShow(req, res) {
   User
     .findById(req.params.id)
     .populate({
-      path: 'recieved_requests',
+      path: 'received_requests',
       model: 'Request',
       populate: [
         {

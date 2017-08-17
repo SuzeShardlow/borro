@@ -16,9 +16,9 @@ function usersShowCtrl(User, Request, $stateParams, $scope) {
       .accept({ id: request._id })
       .$promise
       .then(request => {
-        const index = vm.user.recieved_requests.indexOf(request);
-        vm.user.recieved_requests.splice(index, 1);
-        vm.user.recieved_requests.push(request);
+        const index = vm.user.received_requests.indexOf(request);
+        vm.user.received_requests.splice(index, 1);
+        vm.user.received_requests.push(request);
         console.log('request has been successfully accepted.');
       });
   }
@@ -28,8 +28,8 @@ function usersShowCtrl(User, Request, $stateParams, $scope) {
       .reject({ id: request._id })
       .$promise
       .then(request => {
-        const index = vm.user.recieved_requests.indexOf(request);
-        vm.user.recieved_requests.splice(index, 1);
+        const index = vm.user.received_requests.indexOf(request);
+        vm.user.received_requests.splice(index, 1);
         console.log('request has been successfully rejected.');
       });
   }
@@ -41,7 +41,7 @@ function usersShowCtrl(User, Request, $stateParams, $scope) {
       .then(() => {
         const index = vm.user.sent_requests.indexOf(request);
         vm.user.sent_requests.splice(index, 1);
-        vm.user.recieved_requests.splice(index, 1);
+        vm.user.received_requests.splice(index, 1);
         console.log('request has been successfully deleted');
       });
   }

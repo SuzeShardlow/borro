@@ -29,7 +29,7 @@ User
     passwordConfirmation: 'password',
     items: [],
     sent_requests: [],
-    recieved_requests: []
+    received_requests: []
   },
   {
     firstName: 'kenny',
@@ -42,7 +42,7 @@ User
     passwordConfirmation: 'password',
     items: [],
     sent_requests: [],
-    recieved_requests: []
+    received_requests: []
   },
   {
     firstName: 'eric',
@@ -55,7 +55,7 @@ User
     passwordConfirmation: 'password',
     items: [],
     sent_requests: [],
-    recieved_requests: []
+    received_requests: []
   },
   {
     firstName: 'jenny',
@@ -68,7 +68,7 @@ User
     passwordConfirmation: 'password',
     items: [],
     sent_requests: [],
-    recieved_requests: []
+    received_requests: []
   }
 ]).then(users => {
   console.log(`${users.length} users have been successfully created.`);

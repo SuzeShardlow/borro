@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   passwordHash: { type: String, required: true },
   items: [],
   sent_requests: [{ type: mongoose.Schema.ObjectId, ref: 'Request' }],
-  recieved_requests: [{ type: mongoose.Schema.ObjectId, ref: 'Request' }]
+  received_requests: [{ type: mongoose.Schema.ObjectId, ref: 'Request' }]
 });
 
 // we don't want to store the password and password confirmation as strings in the schema, however we do need to check that they match and that they satisfy the criteria we have set down
@@ -62,7 +62,7 @@ function validatePasswordHash() {
       return this.invalidate('password', 'A password is required.');
     }
 
-    if (this._password.length < 2) {
+    if (this._password.length < 6) {
       return this.invalidate('password', 'must be at least six characters.');
     }
 

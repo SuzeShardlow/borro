@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <h1>Login</h1>
 
-<form ng-submit="login.login()">
-  <div>
-    <input type="email" name="email" placeholder="E-mail Address" ng-model="login.user.email">
+<form ng-submit="login.login()" class="pure-form pure-form-stacked">
+  <fieldset>
+    <label for="email">E-mail Address</label>
+    <input type="email" name="email" placeholder="E-mail Address" ng-model="login.user.email" class="pure-input-rounded">
+
+    <label for="password">Password</label>
+
+    <input type="password" name="password" placeholder="Your password" ng-model="login.user.password" class="pure-input-rounded">
   </div>
-  <div>
-    <input type="password" name="password" placeholder="Your password" ng-model="login.user.password">
-  </div>
-  <input type="submit" value="Login">
+  <button class="pure-button pure-button-success">Login</button>
+
+</fieldset>
+
 </form>

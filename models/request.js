@@ -9,7 +9,7 @@ const requestSchema = new mongoose.Schema({
 });
 
 // requestSchema.pre('remove', function(next) {
-//   this.model('User').remove({ recieved_requests: this._id }, next);
+//   this.model('User').remove({ received_requests: this._id }, next);
 // });
 
 module.exports = mongoose.model('Request', requestSchema);

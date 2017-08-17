@@ -11,7 +11,7 @@ function requestsCreate(req, res) {
         user.save();
 
         User.findById(request.owner, (err, user) => {
-          user.recieved_requests.push(request._id);
+          user.received_requests.push(request._id);
           user.save();
 
           res.status(201).json(request);

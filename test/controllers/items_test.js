@@ -44,5 +44,91 @@ describe('Item tests', () => {
       done();
     });
   });
+
+  it('should return an array of items', done => {
+  api
+    .get('/api/items')
+    .set('Accept', 'application/json')
+    .end((err, res) => {
+      expect(res.body).to.be.an('array');
+      done();
+    });
+});
+
+it('should return an array of item objects', done => {
+  api.get('/api/items')
+    .set('Accept', 'application/json')
+    .end((err, res) => {
+      expect(res.body)
+        .and.be.an('array')
+        .and.have.property(0)
+        .and.have.all.keys([
+          '__v',
+          '_id',
+          'title',
+          'make',
+          'model',
+          'createdAt',
+          'updatedAt'
+        ]);
+      done();
+    });
+});
+
+it('item objects should have properities: _id, title, make, model, createdAt, updatedAt', done => {
+      api.get('/api/items')
+        .set('Accept', 'application/json')
+        .end((err, res) => {
+          const firstItem = res.body[0];
+
+          expect(firstItem)
+            .to.have.property('_id')
+            .and.to.be.a('string');
+
+          expect(firstItem)
+            .to.have.property('title')
+            .and.to.be.a('string');
+
+          expect(firstItem)
+            .to.have.property('make')
+            .and.to.be.a('string');
+
+          expect(firstItem)
+            .to.have.property('model')
+            .and.to.be.a('boolean');
+
+          expect(firstItem)
+            .to.have.property('createdAt')
+            .and.to.be.a('string');
+
+          expect(firstItem)
+            .to.have.property('updatedAt')
+            .and.to.be.a('string');
+
+          done();
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   })
 })

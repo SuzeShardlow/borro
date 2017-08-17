@@ -5,34 +5,36 @@
 
 <div>
   <p><h1>{{ itemsShow.item.title }}</h1></p>
-  <h3>Type: {{ itemsShow.item.type }}</h3>
   <h3>Category: {{ itemsShow.item.category.name }}</h3>
+  <h3>Type: {{ itemsShow.item.type }}</h3>
   <h3>Brand: {{ itemsShow.item.make }}</h3>
   <h3>{{ itemsShow.item.model }}</h3>
 </div>
 
 <div ui-sref="usersShow({ id: itemsShow.item.owner._id })">
-  <p> Owned by {{ itemsShow.item.owner.firstName }} {{ itemsShow.item.owner.lastName }}</p>
+  <p> Owned by: {{ itemsShow.item.owner.firstName }} {{ itemsShow.item.owner.lastName }}</p>
 </div>
 
 <div ui-sref="usersShow({ id: itemsShow.item.borrower._id })">
-  <p> Currently borrowed by {{ itemsShow.item.borrower.firstName }} {{ itemsShow.item.borrower.lastName }}</p>
+  <p> Currently borrowed by: {{ itemsShow.item.borrower.firstName }} {{ itemsShow.item.borrower.lastName }}</p>
 </div>
 
 <div>
+  <h2>Note From The Owner:</h2>
+
   <p>{{ itemsShow.item.noteFromTheOwner }}</p>
 </div>
 
-<div>
+<!-- <div>
   <p>Placeholder for Google Map</p>
 </div>
 
 <div>
   <p>Placeholder for question section</p>
-</div>
+</div> -->
 
 <div>
-  <h2>Make a request</h2>
+  <h2>Make a request:</h2>
   <form ng-submit="itemsShow.createRequest()">
     <label for="message">Message</label><br/>
     <textarea name="message" ng-model="itemsShow.request.message"></textarea><br/>

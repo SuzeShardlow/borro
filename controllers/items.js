@@ -12,7 +12,7 @@ function itemsIndex(req, res) {
 }
 
 function itemsCreate(req, res) {
-  req.body.createdBy = req.user.id;
+  req.body.owner = req.user.id;
   console.log(req.user);
   console.log(req.body);
   Category

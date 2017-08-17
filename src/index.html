@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Project 3</title>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:600" rel="stylesheet">
   <base href="/"/>
   <!-- inject:js -->
   <!-- endinject -->
@@ -15,27 +16,29 @@
 
   <header>
     <div class="pure-menu pure-menu-horizontal">
-      <a ui-sref="home" class="pure-menu-heading pure-menu-link">Logo Sharing</a>
+      <a ui-sref="home" class="pure-menu-heading pure-menu-link">BORRO</a>
       <ul class="pure-menu-list">
 
         <li class="pure-menu-item" ng-hide="body.user">
           <a ui-sref="login" class="pure-menu-link">Login</a>
         </li>
+
         <li class="pure-menu-item" ng-show="body.user">
-          <p>Welcome {{body.user.firstName}}</p>
+          <a ui-sref="itemsIndex" class="pure-menu-link">Browse Items To Borrow</a>
         </li>
+
+        <li class="pure-menu-item" ng-show="body.user"><a ui-sref="usersShow({id: body.user._id})" class="pure-menu-link">
+          Signed in as <span style="color: #263C3F;">{{body.user.firstName}} {{body.user.lastName}}</span></a>
+        </li>
+
         <li class="pure-menu-item" ng-hide="body.user">
           <a ui-sref="register" class="pure-menu-link">Register</a>
         </li>
+
         <li class="pure-menu-item" ng-show="body.user">
-          <a ng-click="body.logout()" class="pure-menu-link">Logout</a>
+          <a ng-click="body.logout()" class="pure-menu-link">(<span style="color: #263C3F;">Not {{body.user.firstName}}?</span>  Sign in as another user.)</a>
         </li>
-        <li class="pure-menu-item" ng-show="body.user">
-          <a ui-sref="usersShow({id: body.user._id})" class="pure-menu-link">Profile</a>
-        </li>
-        <li class="pure-menu-item" ng-show="body.user">
-          <a ui-sref="itemsIndex" class="pure-menu-link">Items</a>
-        </li>
+
       </ul>
     </div>
   </header>

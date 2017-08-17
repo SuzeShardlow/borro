@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<h1>Items</h1>
+<h1>Browse items to borrow</h1>
 
 <div ng-controller="ItemsIndexCtrl">
-  <label for="categories">Categories</label><br/>
+  <label for="categories" style="font-size: 20px;">Categories</label><br/>
 
-<input type="checkbox" ng-click="itemsIndex.includeCategory('All')"/> All
-<input type="checkbox" ng-click="itemsIndex.includeCategory('Outdoors')"/> Outdoors
-<input type="checkbox" ng-click="itemsIndex.includeCategory('Kitchen')"/> Kitchen
-<input type="checkbox" ng-click="itemsIndex.includeCategory('Electrical Beauty')"/> Electrical Beauty
-<input type="checkbox" ng-click="itemsIndex.includeCategory('Gardening')"/> Gardening
-<input type="checkbox" ng-click="itemsIndex.includeCategory('DIY')"/> DIY
-<input type="checkbox" ng-click="itemsIndex.includeCategory('Entertainment')"/> Entertainment
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('All')"/> All
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('Outdoors')"/> Outdoors
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('Kitchen')"/> Kitchen
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('Electrical Beauty')"/> Electrical Beauty
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('Gardening')"/> Gardening
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('DIY')"/> DIY
+  <input type="checkbox" ng-click="itemsIndex.includeCategory('Entertainment')"/> Entertainment
 
 </div>
 
-<ul>
-  <li ng-repeat="item in itemsIndex.filtered"  ng-show="item.owner._id !== body.user._id && item.borrower !== body.user._id" class=".pure-u-lg-1-4">
 
-    <div ui-sref="itemsShow({ id: item._id })" >
-      <p >{{ item.title }}</p>
-      <img src="{{item.photo}}">
-    </div>
+  <ul class="pure-g">
+    <li ng-repeat="item in itemsIndex.filtered"  ng-show="item.owner._id !== body.user._id && item.borrower !== body.user._id" class="pure-u-1-4">
 
-  </li>
-</ul>
+      <div ui-sref="itemsShow({ id: item._id })" >
+        <img src="{{item.photo}}" class="pure-u-4-5">
+        <p class="pure-u-4-5">{{ item.title }}</p>
+      </div>
+
+    </li>
+  </ul>

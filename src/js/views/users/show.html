@@ -16,9 +16,9 @@
     </li>
   </ul>
 
-  <h4>Recieved Requests</h4>
+  <h4>received Requests</h4>
   <ul>
-    <li ng-repeat="request in usersShow.user.recieved_requests" ng-show="request.status === 'pending'">
+    <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'pending'">
       <div>
         <h2>{{ request.borrower.firstName }} want's to borrow your {{ request.item.title }}</h2>
         <p><em>{{ request.message}}</em></p>
@@ -55,7 +55,7 @@
 <div>
   <h1>Currently Lending</h1>
   <ul>
-    <li ng-repeat="request in usersShow.user.recieved_requests" ng-show="request.status === 'accepted'">
+    <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'accepted'">
       <div>
         <p>{{ request.item.title }} to {{ request.borrower.firstName }}</p>
         <button ng-click="usersShow.deleteRequest(request)">Got back</button>

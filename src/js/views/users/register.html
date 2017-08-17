@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <h1>Register</h1>
-<form ng-submit="register.register()">
+<form ng-submit="register.register()" class="pure-form pure-form-aligned">
+  <fieldset>
 
-  <div>
-    <input type="text" name="firstName" ng-model="register.user.firstName" placeholder="First Name">
-  </div>
+    <div class="pure-control-group">
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" ng-model="register.user.firstName" placeholder="First Name" class="pure-input-rounded">
+      <span class="pure-form-message-inline">This is a required field.</span>
+    </div>
 
-  <div>
-    <input type="text" name="lastName" ng-model="register.user.lastName" placeholder="Last Name">
-  </div>
 
-  <div>
-    <input type="email" name="email" ng-model="register.user.email" placeholder="E-mail Address">
-  </div>
+    <div class="pure-control-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" name="lastName" ng-model="register.user.lastName" placeholder="Last Name" class="pure-input-rounded">
+      <span class="pure-form-message-inline">This is a required field.</span>
+    </div>
 
-  <div>
-    <input type="text" name="photo" ng-model="register.user.photo" placeholder="Your Photograph">
-  </div>
+    <div class="pure-control-group">
+      <label for="email">E-mail Address</label>
+      <input type="email" name="email" ng-model="register.user.email" placeholder="E-mail Address" class="pure-input-rounded">
+      <span class="pure-form-message-inline">This is a required field.</span>
+    </div>
 
-  <div>
-    <input type="date" name="dob" ng-model="register.user.dob" placeholder="Your Date Of Birth">
-  </div>
+    <div class="pure-control-group">
+      <label for="photo">Your Profile Picture</label>
+      <input type="text" name="photo" ng-model="register.user.photo" placeholder="Your Profile Picture" class="pure-input-rounded">
+    </div>
 
-  <div>
-    <input type="text" name="description" ng-model="register.user.description" placeholder="A Bit About You!">
-  </div>
+    <div class="pure-control-group">
+      <label for="dob">Date Of Birth</label>
+      <input type="date" name="dob" ng-model="register.user.dob" placeholder="Your Date Of Birth" class="pure-input-rounded">
+    </div>
 
-  <div>
-    <input type="password" name="password" ng-model="register.user.password" placeholder="Choose A Password (minimum six characters)">
-  </div>
+    <div class="pure-control-group">
+      <label for="description">Tell Us A Bit About Yourself...</label>
+      <input type="text" name="description" ng-model="register.user.description" placeholder="A Bit About You!" class="pure-input-rounded">
+      <span class="pure-form-message-inline">Eg "Hi, I'm Jane and I love gardening.  Check out my hoes!"</span>
+    </div>
 
-  <div>
-    <input type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Retype Password">
-  </div>
+    <div class="pure-control-group">
+      <label for="password">Choose A Password (minimum six characters)</label>
+      <input type="password" name="password" ng-model="register.user.password" placeholder="Choose A Password (minimum six characters)" class="pure-input-rounded">
+      <span class="pure-form-message-inline">This is a required field.</span>
+    </div>
 
-<input type="submit" value="Register" />
+    <div class="pure-control-group">
+      <label for="passwordConfirmation">Retype Your Password</label>
+      <input type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Retype Password" class="pure-input-rounded">
+      <span class="pure-form-message-inline">This is a required field.</span>
+
+      <button type="submit" class="pure-button pure-button-success">Register</button>
+    </div>
+
+  </fieldset>
 </form>

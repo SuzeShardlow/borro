@@ -11,6 +11,8 @@
   <h3>{{ itemsShow.item.model }}</h3>
 </div>
 
+<hr>
+
 <div ui-sref="usersShow({ id: itemsShow.item.owner._id })">
   <p> Owned by: {{ itemsShow.item.owner.firstName }} {{ itemsShow.item.owner.lastName }}</p>
 </div>
@@ -18,6 +20,8 @@
 <div ui-sref="usersShow({ id: itemsShow.item.borrower._id })">
   <p> Currently borrowed by: {{ itemsShow.item.borrower.firstName }} {{ itemsShow.item.borrower.lastName }}</p>
 </div>
+
+<hr>
 
 <div>
   <h2>Note From The Owner:</h2>
@@ -32,6 +36,8 @@
 <div>
   <p>Placeholder for question section</p>
 </div> -->
+
+<hr>
 
 <div>
   <h2>Make a request:</h2>

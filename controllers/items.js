@@ -5,7 +5,7 @@ const Category = require('../models/category');
 function itemsIndex(req, res) {
   Item
   .find()
-  .populate('owner')
+  .populate('owner category')
   .exec()
   .then(items => res.status(200).json(items))
   .catch(err => res.status(500).json(err));

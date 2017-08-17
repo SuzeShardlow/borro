@@ -8,7 +8,11 @@ module.exports = {
 
 
 
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> 80e873f9dc849045cb031c54b50b6f032741e220
 //   db: {
 //     production: process.env.MONGODB_URI,
 //     development: 'mongodb://localhost/toolio',

@@ -1,76 +1,80 @@
 <!DOCTYPE html>
-<h1>Dashboard</h1>
+<div style=" ">
 
-<a ui-sref="itemsNew">New</a>
 
-<div>
-  <h2>Requests</h2>
 
-  <h4>Sent Requests</h4>
-  <ul>
-    <li ng-repeat="request in usersShow.user.sent_requests" ng-show="request.status === 'pending'">
-      <div>
-        <h2>You wish to borrow {{ request.owner.firstName }}'s {{ request.item.title }}</h2>
-        <button ng-click="usersShow.deleteRequest(request)">Delete</button>
-      </div>
-    </li>
-  </ul>
 
-  <h4>received Requests</h4>
-  <ul>
-    <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'pending'">
-      <div>
-        <h2>{{ request.borrower.firstName }} want's to borrow your {{ request.item.title }}</h2>
-        <p><em>{{ request.message}}</em></p>
-        <button ng-click="usersShow.acceptRequest(request)">Accept</button>
-        <button ng-click="usersShow.rejectRequest(request)">Reject</button>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div>
-  <h1>Hi {{usersShow.user.firstName}} </h1>
-  <p>You have a request pending.</p>
-</div>
-
-<div>
-  <img src="{{usersShow.user.photo}}">
-  <!-- <h1>Member Since 2017</h1> -->
-</div>
-
-<div>
-  <h2>{{ usersShow.user.firstName}}'s Items</h2>
-
-<div class="pure-u-1-5 pure-img">
-  <ul>
-    <li ng-repeat="item in usersShow.user.items">
-    <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
-    <img src="{{item.photo}}" class="profileItemPic">
-  </li>
-  </ul>
+  <div class="row" >
+    <ul class="pure-g grid content-center-v content-center-h pure-u-16-24">
+      <li class="pure-u-8-24"><img src="{{usersShow.user.photo}}"></li>
+      <li class="pure-u-8-24"><h1>Hi {{usersShow.user.firstName}}!</h1></li>
+    </ul>
   </div>
-</div>
 
-<div>
-  <h1>Currently Lending</h1>
-  <ul>
-    <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'accepted'">
-      <div>
-        <p>{{ request.item.title }} to {{ request.borrower.firstName }}</p>
-        <button ng-click="usersShow.deleteRequest(request)">Got back</button>
-      </div>
-    </li>
-  </ul>
-</div>
 
-<div>
-  <h1>Currently Borrowing</h1>
-  <ul>
-    <li ng-repeat="request in usersShow.user.sent_requests" ng-show="request.status === 'accepted'">
-      <div>
-        <p>{{ request.owner.firstName}}'s {{ request.item.title }}</p>
-      </div>
-    </li>
-  </ul>
+  <div id="borrow-lend">
+    <h2>Borrowing and Lending Requests</h2>
+
+    <h4>Requests You Have Sent</h4>
+    <ul>
+      <li ng-repeat="request in usersShow.user.sent_requests" ng-show="request.status === 'pending'">
+        <div>
+          <h2>You wish to borrow {{ request.owner.firstName }}'s {{ request.item.title }}</h2>
+          <button ng-click="usersShow.deleteRequest(request)">Delete</button>
+        </div>
+      </li>
+    </ul>
+
+    <h4>Received Requests</h4>
+    <ul>
+      <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'pending'">
+        <div>
+          <h3>{{ request.borrower.firstName }} wants to borrow your {{ request.item.title }}</h3>
+          <p><em>{{ request.message}}</em></p>
+          <button ng-click="usersShow.acceptRequest(request)">Accept</button>
+          <button ng-click="usersShow.rejectRequest(request)">Reject</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <div>
+    <h2>Your Items</h2>
+
+    <h3><a ui-sref="itemsNew">Add a new item</a></h3>
+
+    <div class="pure-u-1-5 pure-img">
+      <ul>
+        <li ng-repeat="item in usersShow.user.items">
+          <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
+          <img src="{{item.photo}}" class="profileItemPic">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h1>Currently Lending</h1>
+    <ul>
+      <li ng-repeat="request in usersShow.user.received_requests" ng-show="request.status === 'accepted'">
+        <div>
+          <p>{{ request.item.title }} to {{ request.borrower.firstName }}</p>
+          <button ng-click="usersShow.deleteRequest(request)">Got back</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Currently Borrowing</h1>
+    <ul>
+      <li ng-repeat="request in usersShow.user.sent_requests" ng-show="request.status === 'accepted'">
+        <div>
+          <p>{{ request.owner.firstName}}'s {{ request.item.title }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+    </div>
 </div>

@@ -13,7 +13,7 @@ function LoginCtrl(User, CurrentUserService, $state) {
       .$promise
       .then(data => {
         CurrentUserService.getUser();
-        $state.go('usersShow', { id: data.user.id });
+        $state.go('usersShow', { id: data.user._id });
       }, err => {
         console.log(err);
       });

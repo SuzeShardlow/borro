@@ -20,7 +20,7 @@ User
 .create([
   {
     firstName: 'wendy',
-    lastName: 'wendy',
+    lastName: 'jones',
     email: 'wendy@wendy.com',
     photo: 'http://www.fillmurray.com/300/300',
     dob: '2017-01-09T00:00:00.000Z',
@@ -33,7 +33,7 @@ User
   },
   {
     firstName: 'kenny',
-    lastName: 'kenny',
+    lastName: 'smith',
     email: 'kenny@kenny.com',
     photo: 'http://www.fillmurray.com/300/300',
     dob: '2017-01-09T00:00:00.000Z',

@@ -10,14 +10,50 @@ function usersIndex(req, res) {
 
 function usersShow(req, res) {
   User
-  .findById(req.params.id)
-  .exec()
-  .then(user => {
-    Item.find({ owner: user._id }, (err, items) => {
-      user.items = items;
-      res.json(user);
+    .findById(req.params.id)
+    .populate({
+      path: 'recieved_requests',
+      model: 'Request',
+      populate: [
+        {
+          path: 'item',
+          model: 'Item'
+        },
+        {
+          path: 'borrower',
+          model: 'User'
+        },
+        {
+          path: 'owner',
+          model: 'User'
+        }
+      ]
+    })
+    .populate({
+      path: 'sent_requests',
+      model: 'Request',
+      populate: [
+        {
+          path: 'item',
+          model: 'Item'
+        },
+        {
+          path: 'borrower',
+          model: 'User'
+        },
+        {
+          path: 'owner',
+          model: 'User'
+        }
+      ]
+    })
+    .exec()
+    .then(user => {
+      Item.find({ owner: user._id }, (err, items) => {
+        user.items = items;
+        res.json(user);
+      });
     });
-  });
 }
 
 function usersUpdate(req, res) {

@@ -1,7 +1,13 @@
+<!DOCTYPE html>
 <h1>Items</h1>
 
 <ul>
-  <li ng-repeat="item in itemsIndex.all">
-    <p ui-sref="itemsShow({ id: item._id })">{{ item.title }}</p>
+  <li ng-repeat="item in itemsIndex.all" ng-show="item.owner._id !== body.user._id && item.borrower !== body.user._id" class=".pure-u-lg-1-4">
+    
+    <div ui-sref="itemsShow({ id: item._id })" >
+      <p >{{ item.title }}</p>
+      <img src="{{item.photo}}">
+    </div>
+
   </li>
 </ul>

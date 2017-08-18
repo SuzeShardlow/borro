@@ -19,8 +19,8 @@ Request.collection.drop();
 User
 .create([
   {
-    firstName: 'wendy',
-    lastName: 'jones',
+    firstName: 'Wendy',
+    lastName: 'Jones',
     email: 'wendy@wendy.com',
     photo: 'http://www.fillmurray.com/300/300',
     dob: '2017-01-09T00:00:00.000Z',
@@ -32,8 +32,8 @@ User
     received_requests: []
   },
   {
-    firstName: 'kenny',
-    lastName: 'smith',
+    firstName: 'Kenny',
+    lastName: 'Smith',
     email: 'kenny@kenny.com',
     photo: 'http://www.fillmurray.com/300/300',
     dob: '2017-01-09T00:00:00.000Z',
@@ -45,8 +45,8 @@ User
     received_requests: []
   },
   {
-    firstName: 'eric',
-    lastName: 'eric',
+    firstName: 'Eric',
+    lastName: 'Good',
     email: 'eric@eric.com',
     photo: 'http://www.fillmurray.com/300/300',
     dob: '2017-01-09T00:00:00.000Z',
@@ -58,8 +58,8 @@ User
     received_requests: []
   },
   {
-    firstName: 'jenny',
-    lastName: 'jenny',
+    firstName: 'Jenny',
+    lastName: 'Crow',
     email: 'jenny@jenny.com',
     photo: 'http://www.fillmurray.com/300/300',
     dob: '2017-01-09T00:00:00.000Z',

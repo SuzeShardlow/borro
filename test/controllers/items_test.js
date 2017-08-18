@@ -175,7 +175,6 @@ describe('tests', () => {
         .set('Accept', 'application/json')
         .set('Authorization', `Bearer ${token}`)
         .expect(200, done);
-        done();
     });
   });
 
@@ -198,9 +197,7 @@ describe('tests', () => {
     it('should return a 401 response', done => {
       api.delete(`/api/items/${item.id}`)
         .set('Accept', 'application/json')
-        .set('Authorization', `Bearer ${token}`)
         .expect(401, done);
-        done();
     });
 
   });
@@ -209,17 +206,24 @@ describe('tests', () => {
 
       beforeEach(done => {
         const user = new User({
-          username: 'test',
-          email: 'test@test.com',
+          firstName: 'wendyB',
+          lastName: 'wendyB',
+          email: 'wendy@wendyB.com',
+          photo: 'http://www.fillmurray.com/300/300',
+          dob: '2017-01-09T00:00:00.000Z',
+          description: 'wendy',
           password: 'password',
-          passwordConfirmation: 'password'
+          passwordConfirmation: 'password',
+          items: [],
+          sent_requests: [],
+          recieved_requests: []
         });
 
         user.save((err, user) => {
           api.post('/api/login')
             .set('Accept', 'application/json')
             .send({
-              email: 'test@test.com',
+              email: 'wendy@wendyB.com',
               password: 'password'
             }).end((err, res) => {
               token = res.body.token;
@@ -240,7 +244,6 @@ describe('tests', () => {
           .set('Accept', 'application/json')
           .set('Authorization', `Bearer ${token}`)
           .expect(204, done);
-          done();
       });
      });
     });

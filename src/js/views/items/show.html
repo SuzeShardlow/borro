@@ -40,10 +40,10 @@
 <hr>
 
 <div>
-  <h2>Make a request:</h2>
-  <form ng-submit="itemsShow.createRequest()">
+  <h2 class="pure-form">Make a request:</h2>
+  <form ng-submit="itemsShow.createRequest()" class="pure-form">
     <label for="message">Message</label><br/>
     <textarea name="message" ng-model="itemsShow.request.message"></textarea><br/>
-    <button>Submit Request</button>
+    <button class="button-success pure-button">Submit Request</button>
   </form>
 </div>

@@ -19,10 +19,10 @@ Request.collection.drop();
 User
 .create([
   {
-    firstName: 'wendy',
-    lastName: 'jones',
-    email: 'wendy@wendy.com',
-    photo: 'http://www.fillmurray.com/300/300',
+    firstName: 'Suze',
+    lastName: 'Shardlow',
+    email: 'suze@ga.co',
+    photo: 'https://avatars0.githubusercontent.com/u/6759411?v=4&s=460',
     dob: '2017-01-09T00:00:00.000Z',
     description: 'wendy',
     password: 'password',

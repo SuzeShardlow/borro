@@ -4,7 +4,8 @@
   "description": "Project",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/_mocha"
+    "test": "node_modules/.bin/_mocha",
+    "postinstall": "bower install && gulp deploy"
   },
   "author": "Alex Chin <alex@alexchin.co.uk>",
   "license": "ISC",

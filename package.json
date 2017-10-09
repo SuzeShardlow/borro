@@ -1,13 +1,14 @@
 {
-  "name": "Project",
+  "name": "Borro",
   "version": "1.0.0",
-  "description": "Project",
+  "description": "A borrowing and lending app",
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover node_modules/.bin/_mocha",
-    "postinstall": "bower install && gulp deploy"
+    "start": "node index.js",
+    "seeddb": "node db/seeds.js"
   },
-  "author": "Alex Chin <alex@alexchin.co.uk>",
+  "author": "Suze Shardlow, Emilie Dussaix and Faisal Khan",
   "license": "ISC",
   "gulp": {
     "srcDir": "src/",
